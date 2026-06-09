@@ -1,0 +1,40 @@
+﻿using Kelompok_2___PBO_Projects_Apps.Database;
+using Npgsql;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
+namespace Kelompok_2___PBO_Projects_Apps
+{
+    public partial class FormAdmin : Form
+    {
+        public FormAdmin()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            FormRegister register = new FormRegister();
+            register.Show();
+        }
+
+        private void btn_olah_komoditas_Click(object sender, EventArgs e)
+        {
+            FormOlahKomoditas register = new FormOlahKomoditas();
+            register.Show();
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
+        }
+    }
+}
