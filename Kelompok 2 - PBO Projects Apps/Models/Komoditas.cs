@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kelompok_2___PBO_Projects_Apps
+namespace Kelompok_2___PBO_Projects_Apps.Models
 {
     public class Komoditas
     {

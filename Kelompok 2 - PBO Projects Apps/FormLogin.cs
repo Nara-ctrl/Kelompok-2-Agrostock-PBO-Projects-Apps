@@ -1,5 +1,6 @@
 using Kelompok_2___PBO_Projects_Apps.Controllers;
 using Kelompok_2___PBO_Projects_Apps.Database;
+using Kelompok_2___PBO_Projects_Apps.Models;
 using Npgsql;
 
 namespace Kelompok_2___PBO_Projects_Apps

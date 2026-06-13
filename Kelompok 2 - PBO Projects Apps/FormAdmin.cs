@@ -36,5 +36,12 @@ namespace Kelompok_2___PBO_Projects_Apps
             login.Show();
             this.Hide();
         }
+
+        private void btn_transaksi_Click(object sender, EventArgs e)
+        {
+            FormTransaksi kelolaData = new FormTransaksi();
+            kelolaData.Show();
+            this.Hide();
+        }
     }
 }

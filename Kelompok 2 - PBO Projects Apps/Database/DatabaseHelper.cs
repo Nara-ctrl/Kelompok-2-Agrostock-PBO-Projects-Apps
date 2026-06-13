@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Kelompok_2___PBO_Projects_Apps.Models;
 using Npgsql;
 
 namespace Kelompok_2___PBO_Projects_Apps.Database
@@ -67,7 +68,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             return new NpgsqlConnection(connString);
         }
 
-        //user
         public bool LoginUser(string username, string password, out int userId, out string role)
         {
             userId = 0; role = "";
@@ -132,6 +132,75 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 cmd.Parameters.AddWithValue("nama", nama);
                 cmd.Parameters.AddWithValue("alamat", alamat);
                 cmd.Parameters.AddWithValue("no_tlp", noTlp);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public List<(int idPetani, string nama)> GetPetaniList()
+        {
+            var list = new List<(int, string)>();
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            string query = "SELECT id_petani, nama FROM petani ORDER BY nama ASC";
+            using var cmd = new NpgsqlCommand(query, conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+                list.Add((reader.GetInt32(0), reader.GetString(1)));
+            return list;
+        }
+
+        public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
+                            decimal jumlah, string satuan)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal, status) VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal, @status)";
+            using (var cmd = new NpgsqlCommand(q1, conn))
+            {
+                cmd.Parameters.AddWithValue("id_komoditas", idKomoditas);
+                cmd.Parameters.AddWithValue("id_petani", idPetani);
+                cmd.Parameters.AddWithValue("jenis", jenis);
+                cmd.Parameters.AddWithValue("jumlah", jumlah);
+                cmd.Parameters.AddWithValue("satuan", satuan);
+                cmd.Parameters.AddWithValue("tanggal", DateTime.Now);
+                cmd.Parameters.AddWithValue("status", jenis == "masuk" ? "Masuk" : "Keluar");
+                cmd.ExecuteNonQuery();
+            }
+
+            if (jenis == "masuk")
+            {
+                string cek = "SELECT COUNT(*) FROM stok WHERE id_komoditas = @id";
+                int jumlahData;
+                using (var cmd = new NpgsqlCommand(cek, conn))
+                {
+                    cmd.Parameters.AddWithValue("id", idKomoditas);
+                    jumlahData = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+
+                if (jumlahData == 0)
+                {
+                    string insert = "INSERT INTO stok (id_komoditas, jumlah) VALUES (@id, @jumlah)";
+                    using var cmd = new NpgsqlCommand(insert, conn);
+                    cmd.Parameters.AddWithValue("id", idKomoditas);
+                    cmd.Parameters.AddWithValue("jumlah", jumlah);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    string update = "UPDATE stok SET jumlah = jumlah + @jumlah WHERE id_komoditas = @id";
+                    using var cmd = new NpgsqlCommand(update, conn);
+                    cmd.Parameters.AddWithValue("id", idKomoditas);
+                    cmd.Parameters.AddWithValue("jumlah", jumlah);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            else if (jenis == "keluar")
+            {
+                string q2 = "UPDATE stok SET jumlah = jumlah - @jumlah WHERE id_komoditas = @id";
+                using var cmd = new NpgsqlCommand(q2, conn);
+                cmd.Parameters.AddWithValue("id", idKomoditas);
+                cmd.Parameters.AddWithValue("jumlah", jumlah);
                 cmd.ExecuteNonQuery();
             }
         }
