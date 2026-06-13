@@ -32,7 +32,7 @@
             btn_p_register = new Button();
             btn_olah_komoditas = new Button();
             btn_logout = new Button();
-            btn_Transaksi = new Button();
+            btn_kelola_data = new Button();
             SuspendLayout();
             // 
             // btn_p_register
@@ -80,20 +80,20 @@
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
             // 
-            // btn_Transaksi
+            // btn_kelola_data
             // 
-            btn_Transaksi.BackColor = Color.Transparent;
-            btn_Transaksi.Cursor = Cursors.Hand;
-            btn_Transaksi.FlatAppearance.BorderSize = 0;
-            btn_Transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btn_Transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btn_Transaksi.FlatStyle = FlatStyle.Flat;
-            btn_Transaksi.Location = new Point(690, 194);
-            btn_Transaksi.Name = "btn_Transaksi";
-            btn_Transaksi.Size = new Size(124, 102);
-            btn_Transaksi.TabIndex = 3;
-            btn_Transaksi.UseVisualStyleBackColor = false;
-            btn_Transaksi.Click += btn_transaksi_Click;
+            btn_kelola_data.BackColor = Color.Transparent;
+            btn_kelola_data.Cursor = Cursors.Hand;
+            btn_kelola_data.FlatAppearance.BorderSize = 0;
+            btn_kelola_data.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_kelola_data.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_kelola_data.FlatStyle = FlatStyle.Flat;
+            btn_kelola_data.Location = new Point(690, 194);
+            btn_kelola_data.Name = "btn_kelola_data";
+            btn_kelola_data.Size = new Size(124, 102);
+            btn_kelola_data.TabIndex = 3;
+            btn_kelola_data.UseVisualStyleBackColor = false;
+            btn_kelola_data.Click += btn_kelola_data_Click;
             // 
             // FormAdmin
             // 
@@ -103,7 +103,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
             ControlBox = false;
-            Controls.Add(btn_Transaksi);
+            Controls.Add(btn_kelola_data);
             Controls.Add(btn_logout);
             Controls.Add(btn_olah_komoditas);
             Controls.Add(btn_p_register);
@@ -117,6 +117,6 @@
         private Button btn_p_register;
         private Button btn_olah_komoditas;
         private Button btn_logout;
-        private Button btn_Transaksi;
+        private Button btn_kelola_data;
     }
 }

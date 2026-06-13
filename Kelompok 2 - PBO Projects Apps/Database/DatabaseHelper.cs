@@ -150,21 +150,20 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         }
 
         public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
-                            decimal jumlah, string satuan)
+                                    decimal jumlah, string satuan)
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
 
-            string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal, status) VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal, @status)";
+            string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal) VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal)";
             using (var cmd = new NpgsqlCommand(q1, conn))
             {
                 cmd.Parameters.AddWithValue("id_komoditas", idKomoditas);
-                cmd.Parameters.AddWithValue("id_petani", idPetani);
+                cmd.Parameters.AddWithValue("id_petani", idPetani == 0 ? DBNull.Value : (object)idPetani);
                 cmd.Parameters.AddWithValue("jenis", jenis);
                 cmd.Parameters.AddWithValue("jumlah", jumlah);
                 cmd.Parameters.AddWithValue("satuan", satuan);
                 cmd.Parameters.AddWithValue("tanggal", DateTime.Now);
-                cmd.Parameters.AddWithValue("status", jenis == "masuk" ? "Masuk" : "Keluar");
                 cmd.ExecuteNonQuery();
             }
 
