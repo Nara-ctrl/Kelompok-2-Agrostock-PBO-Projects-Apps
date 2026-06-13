@@ -7,7 +7,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
 {
     internal class DatabaseHelper
     {
-        private static string connString = "Host=localhost;Port=5432;Database=ProjectPboS2;Username=postgres;Password=zen123";
+        private static string connString = "Host=localhost;Port=5432;Database=AgrostockApp;Username=postgres;Password=admin";
 
         
         public List<Komoditas> GetAllKomoditas()
@@ -70,13 +70,16 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         //user
         public bool LoginUser(string username, string password, out int userId, out string role)
         {
-            userId = 0; role = "";
+            userId = 0;
+            role = "";
+
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
             string query = "SELECT id, role FROM users WHERE username = @username AND password = @password";
             using var cmd = new NpgsqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("username", username);
-            cmd.Parameters.AddWithValue("password", password);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
             using var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -86,6 +89,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             }
             return false;
         }
+
 
         public (string nama, string alamat, string noTlp) GetProfilAdmin(int userId)
         {
@@ -104,7 +108,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = "SELECT nama, alamat, no_tlp, id_petani FROM petani WHERE id_user = @id";
+            string query = "SELECT nama, alamat, no_hp, id_petani FROM petani WHERE id_user = @id";
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("id", userId);
             using var reader = cmd.ExecuteReader();

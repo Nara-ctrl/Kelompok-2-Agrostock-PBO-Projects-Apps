@@ -36,5 +36,10 @@ namespace Kelompok_2___PBO_Projects_Apps
             login.Show();
             this.Hide();
         }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
