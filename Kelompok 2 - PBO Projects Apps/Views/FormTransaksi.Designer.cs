@@ -221,6 +221,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
+            ControlBox = false;
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(btn_batal);
@@ -237,7 +238,9 @@
             Controls.Add(cb_komoditas);
             Controls.Add(btn_keluar);
             Controls.Add(btn_masuk);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormTransaksi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Catat Transaksi";
             ResumeLayout(false);
             PerformLayout();

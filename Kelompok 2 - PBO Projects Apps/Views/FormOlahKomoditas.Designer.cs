@@ -44,7 +44,7 @@
             dgv_komoditas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_komoditas.GridColor = Color.LightGray;
             dgv_komoditas.Location = new Point(121, 210);
-            dgv_komoditas.Margin = new Padding(4, 4, 4, 4);
+            dgv_komoditas.Margin = new Padding(4);
             dgv_komoditas.Name = "dgv_komoditas";
             dgv_komoditas.ReadOnly = true;
             dgv_komoditas.RowHeadersWidth = 51;
@@ -65,7 +65,7 @@
             // 
             btnTambah.BackColor = Color.GreenYellow;
             btnTambah.Location = new Point(145, 154);
-            btnTambah.Margin = new Padding(4, 4, 4, 4);
+            btnTambah.Margin = new Padding(4);
             btnTambah.Name = "btnTambah";
             btnTambah.Size = new Size(118, 36);
             btnTambah.TabIndex = 7;
@@ -83,8 +83,10 @@
             Controls.Add(btnTambah);
             Controls.Add(TbSatuan);
             Controls.Add(dgv_komoditas);
-            Margin = new Padding(4, 4, 4, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4);
             Name = "FormOlahKomoditas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Mengolah Komoditas";
             Load += Formmengolahkomoditas_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_komoditas).EndInit();

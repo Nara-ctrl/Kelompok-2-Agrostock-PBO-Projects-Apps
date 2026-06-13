@@ -130,7 +130,9 @@
             Controls.Add(label1);
             Controls.Add(tb_r_password);
             Controls.Add(tb_r_username);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormRegister";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormRegister";
             ResumeLayout(false);
             PerformLayout();

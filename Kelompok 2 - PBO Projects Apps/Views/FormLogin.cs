@@ -34,9 +34,7 @@ namespace Kelompok_2___PBO_Projects_Apps
 
                 if (user != null && user.Validasi())
                 {
-                    MessageBox.Show("Login berhasil");
                     this.Hide();
-
                     if (user is AdminGudang)
                     {
                         FormAdmin admin = new FormAdmin();

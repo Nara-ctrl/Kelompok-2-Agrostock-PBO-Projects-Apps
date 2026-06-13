@@ -107,7 +107,11 @@
             Controls.Add(l_password);
             Controls.Add(L_username);
             Controls.Add(tb_username);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLogin";
             ResumeLayout(false);
             PerformLayout();

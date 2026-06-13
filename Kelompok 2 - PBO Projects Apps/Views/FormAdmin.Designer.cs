@@ -107,7 +107,9 @@
             Controls.Add(btn_logout);
             Controls.Add(btn_olah_komoditas);
             Controls.Add(btn_p_register);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdmin";
             ResumeLayout(false);
         }

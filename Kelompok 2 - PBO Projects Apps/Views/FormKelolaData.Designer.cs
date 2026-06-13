@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKelolaData));
             btn_transaksi = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btn_transaksi
@@ -47,6 +48,21 @@
             btn_transaksi.UseVisualStyleBackColor = false;
             btn_transaksi.Click += btn_transaksi_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(509, 202);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 102);
+            button1.TabIndex = 6;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // FormKelolaData
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -54,8 +70,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
+            ControlBox = false;
+            Controls.Add(button1);
             Controls.Add(btn_transaksi);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormKelolaData";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKelolaData";
             ResumeLayout(false);
         }
@@ -63,5 +83,6 @@
         #endregion
 
         private Button btn_transaksi;
+        private Button button1;
     }
 }
