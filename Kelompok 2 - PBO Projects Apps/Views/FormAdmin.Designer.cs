@@ -110,8 +110,10 @@
             Controls.Add(btn_logout);
             Controls.Add(btn_olah_komoditas);
             Controls.Add(btn_p_register);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2, 2, 2, 2);
             Name = "FormAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdmin";
             Load += FormAdmin_Load;
             ResumeLayout(false);

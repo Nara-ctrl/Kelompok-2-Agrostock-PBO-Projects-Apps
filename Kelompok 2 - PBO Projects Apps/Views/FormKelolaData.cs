@@ -18,7 +18,15 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
         private void btn_transaksi_Click(object sender, EventArgs e)
         {
             FormTransaksi transaksi = new FormTransaksi();
-            transaksi.ShowDialog();
+            transaksi.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAdmin back = new FormAdmin();
+            back.Show();
+            this.Hide();
         }
     }
 }

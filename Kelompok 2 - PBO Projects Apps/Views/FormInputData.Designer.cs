@@ -72,7 +72,7 @@
             // tb_id_komoditas
             // 
             tb_id_komoditas.Location = new Point(206, 82);
-            tb_id_komoditas.Margin = new Padding(4, 4, 4, 4);
+            tb_id_komoditas.Margin = new Padding(4);
             tb_id_komoditas.Name = "tb_id_komoditas";
             tb_id_komoditas.Size = new Size(155, 31);
             tb_id_komoditas.TabIndex = 3;
@@ -80,7 +80,7 @@
             // tb_nama_komoditas
             // 
             tb_nama_komoditas.Location = new Point(206, 132);
-            tb_nama_komoditas.Margin = new Padding(4, 4, 4, 4);
+            tb_nama_komoditas.Margin = new Padding(4);
             tb_nama_komoditas.Name = "tb_nama_komoditas";
             tb_nama_komoditas.Size = new Size(155, 31);
             tb_nama_komoditas.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             btn_simpan.BackColor = Color.YellowGreen;
             btn_simpan.Location = new Point(46, 242);
-            btn_simpan.Margin = new Padding(4, 4, 4, 4);
+            btn_simpan.Margin = new Padding(4);
             btn_simpan.Name = "btn_simpan";
             btn_simpan.Size = new Size(130, 44);
             btn_simpan.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             btn_batal.BackColor = Color.Red;
             btn_batal.Location = new Point(226, 242);
-            btn_batal.Margin = new Padding(4, 4, 4, 4);
+            btn_batal.Margin = new Padding(4);
             btn_batal.Name = "btn_batal";
             btn_batal.Size = new Size(136, 42);
             btn_batal.TabIndex = 7;
@@ -114,7 +114,7 @@
             tbs_satuan.FormattingEnabled = true;
             tbs_satuan.Items.AddRange(new object[] { "Kg", "Ton" });
             tbs_satuan.Location = new Point(206, 178);
-            tbs_satuan.Margin = new Padding(4, 4, 4, 4);
+            tbs_satuan.Margin = new Padding(4);
             tbs_satuan.Name = "tbs_satuan";
             tbs_satuan.Size = new Size(155, 33);
             tbs_satuan.TabIndex = 8;
@@ -134,8 +134,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4);
             Name = "FormInputData";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Forminputdata";
             ResumeLayout(false);
             PerformLayout();

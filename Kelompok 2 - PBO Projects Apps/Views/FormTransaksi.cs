@@ -1,5 +1,6 @@
 ﻿using Kelompok_2___PBO_Projects_Apps.Controllers;
 using Kelompok_2___PBO_Projects_Apps.Database;
+using Kelompok_2___PBO_Projects_Apps.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,7 +130,9 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btn_batal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormKelolaData back = new FormKelolaData();
+            back.Show();
+            this.Hide();
         }
     }
 }

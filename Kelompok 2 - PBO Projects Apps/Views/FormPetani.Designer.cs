@@ -28,6 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SuspendLayout();
+            // 
+            // FormPetani
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "FormPetani";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FormPetani";
+            ResumeLayout(false);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPetani));
             btn_p_register = new Button();
             button1 = new Button();
