@@ -1,4 +1,5 @@
 ﻿using Kelompok_2___PBO_Projects_Apps.Database;
+using Kelompok_2___PBO_Projects_Apps.Views;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -21,19 +22,26 @@ namespace Kelompok_2___PBO_Projects_Apps
         private void btn_register_Click(object sender, EventArgs e)
         {
             FormRegister register = new FormRegister();
-            register.Show();
+            register.ShowDialog();
         }
 
         private void btn_olah_komoditas_Click(object sender, EventArgs e)
         {
             FormOlahKomoditas register = new FormOlahKomoditas();
-            register.Show();
+            register.ShowDialog();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
             FormLogin login = new FormLogin();
-            login.Show();
+            login.ShowDialog();
+            this.Hide();
+        }
+
+        private void btn_kelola_data_Click(object sender, EventArgs e)
+        {
+            FormKelolaData kelolaData = new FormKelolaData();
+            kelolaData.ShowDialog();
             this.Hide();
         }
 

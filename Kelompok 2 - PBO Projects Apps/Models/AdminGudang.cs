@@ -1,10 +1,9 @@
-﻿using Kelompok_2___PBO_Projects_Apps.Controllers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace Kelompok_2___PBO_Projects_Apps.Controllers
+namespace Kelompok_2___PBO_Projects_Apps.Models
 {
     public class AdminGudang : User
     {

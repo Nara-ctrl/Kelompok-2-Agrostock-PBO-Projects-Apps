@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kelompok_2___PBO_Projects_Apps.Controllers
+namespace Kelompok_2___PBO_Projects_Apps.Models
 {
     public abstract class User
     {

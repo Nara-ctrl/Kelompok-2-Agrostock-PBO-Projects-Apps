@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             btn_olah_komoditas = new Button();
             btn_logout = new Button();
+            btn_kelola_data = new Button();
             btn_p_register = new Button();
             SuspendLayout();
             // 
@@ -66,6 +67,21 @@
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
             // 
+            // btn_kelola_data
+            // 
+            btn_kelola_data.BackColor = Color.Transparent;
+            btn_kelola_data.Cursor = Cursors.Hand;
+            btn_kelola_data.FlatAppearance.BorderSize = 0;
+            btn_kelola_data.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_kelola_data.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_kelola_data.FlatStyle = FlatStyle.Flat;
+            btn_kelola_data.Location = new Point(690, 194);
+            btn_kelola_data.Name = "btn_kelola_data";
+            btn_kelola_data.Size = new Size(124, 102);
+            btn_kelola_data.TabIndex = 3;
+            btn_kelola_data.UseVisualStyleBackColor = false;
+            btn_kelola_data.Click += btn_kelola_data_Click;
+            // 
             // btn_p_register
             // 
             btn_p_register.BackColor = Color.Transparent;
@@ -90,6 +106,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(782, 405);
             ControlBox = false;
+            Controls.Add(btn_kelola_data);
             Controls.Add(btn_logout);
             Controls.Add(btn_olah_komoditas);
             Controls.Add(btn_p_register);
@@ -103,6 +120,7 @@
         #endregion
         private Button btn_olah_komoditas;
         private Button btn_logout;
+        private Button btn_kelola_data;
         private Button btn_p_register;
     }
 }
