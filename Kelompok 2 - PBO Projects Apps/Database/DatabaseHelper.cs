@@ -119,7 +119,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
 
         public bool LoginUser(string username, string password, out int userId, out string role)
         {
-            userId = 0; role = "";
+            userId = 0;
+            role = "";
+
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
 
@@ -128,8 +130,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 "WHERE username = @username AND password = @password";
 
             using var cmd = new NpgsqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("username", username);
-            cmd.Parameters.AddWithValue("password", password);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
             using var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -139,6 +142,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             }
             return false;
         }
+
 
         public (string nama, string alamat, string noTlp) GetProfilAdmin(int userId)
         {

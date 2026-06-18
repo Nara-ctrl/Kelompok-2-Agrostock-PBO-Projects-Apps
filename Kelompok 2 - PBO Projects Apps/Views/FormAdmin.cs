@@ -44,5 +44,10 @@ namespace Kelompok_2___PBO_Projects_Apps
             kelolaData.Show();
             this.Hide();
         }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

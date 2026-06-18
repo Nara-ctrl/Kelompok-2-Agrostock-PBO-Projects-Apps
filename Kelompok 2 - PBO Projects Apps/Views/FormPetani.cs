@@ -14,5 +14,12 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
             InitializeComponent();
         }
+
+        // Saat FormPetani ditutup, kembali ke Login
+        private void FormPetani_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+        }
     }
 }
