@@ -44,20 +44,20 @@
             // 
             tb_r_username.BorderStyle = BorderStyle.None;
             tb_r_username.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_username.Location = new Point(583, 258);
+            tb_r_username.Location = new Point(565, 258);
             tb_r_username.Margin = new Padding(2);
             tb_r_username.Name = "tb_r_username";
-            tb_r_username.Size = new Size(180, 18);
+            tb_r_username.Size = new Size(221, 18);
             tb_r_username.TabIndex = 0;
             // 
             // tb_r_password
             // 
             tb_r_password.BorderStyle = BorderStyle.None;
             tb_r_password.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_password.Location = new Point(583, 316);
+            tb_r_password.Location = new Point(565, 316);
             tb_r_password.Margin = new Padding(2);
             tb_r_password.Name = "tb_r_password";
-            tb_r_password.Size = new Size(180, 18);
+            tb_r_password.Size = new Size(221, 18);
             tb_r_password.TabIndex = 1;
             // 
             // label1
@@ -100,17 +100,17 @@
             tb_r_alamat.Location = new Point(196, 316);
             tb_r_alamat.Margin = new Padding(2);
             tb_r_alamat.Name = "tb_r_alamat";
-            tb_r_alamat.Size = new Size(180, 18);
+            tb_r_alamat.Size = new Size(224, 18);
             tb_r_alamat.TabIndex = 6;
             // 
             // tb_r_notlp
             // 
             tb_r_notlp.BorderStyle = BorderStyle.None;
             tb_r_notlp.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_notlp.Location = new Point(196, 379);
+            tb_r_notlp.Location = new Point(196, 377);
             tb_r_notlp.Margin = new Padding(2);
             tb_r_notlp.Name = "tb_r_notlp";
-            tb_r_notlp.Size = new Size(180, 18);
+            tb_r_notlp.Size = new Size(224, 18);
             tb_r_notlp.TabIndex = 7;
             // 
             // tb_r_nama

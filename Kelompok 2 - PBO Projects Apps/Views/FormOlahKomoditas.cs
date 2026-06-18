@@ -26,6 +26,7 @@ namespace Kelompok_2___PBO_Projects_Apps
             //kolom edi
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "id", HeaderText = "ID Komoditas", DataPropertyName = "id_komoditas" });
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "nama", HeaderText = "Nama Komoditas", DataPropertyName = "nama_komoditas" });
+            dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "jumlah", HeaderText = "Jumlah", DataPropertyName = "jumlah" });
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "satuan", HeaderText = "Satuan", DataPropertyName = "satuan" });
 
             // Kolom Edit
@@ -82,7 +83,8 @@ namespace Kelompok_2___PBO_Projects_Apps
 
             if (e.ColumnIndex == dgv_komoditas.Columns["Edit"].Index)
             {
-                Komoditas k = new Komoditas(id, nama, satuan);
+                decimal jumlah = Convert.ToDecimal(row.Cells["jumlah"].Value);
+                Komoditas k = new Komoditas(id, nama, jumlah, satuan);
                 FormInputData formInput = new FormInputData(k);
                 formInput.ShowDialog();
                 LoadData();

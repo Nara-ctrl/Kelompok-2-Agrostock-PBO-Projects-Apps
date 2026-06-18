@@ -1,4 +1,5 @@
-﻿using Kelompok_2___PBO_Projects_Apps.Database;
+﻿
+using Kelompok_2___PBO_Projects_Apps.Database;
 using Kelompok_2___PBO_Projects_Apps.Models;
 using System;
 using System.Windows.Forms;
@@ -15,15 +16,16 @@ namespace Kelompok_2___PBO_Projects_Apps
             InitializeComponent();
             _komoditas = komoditas;
 
-            if (_komoditas != null) 
+            if (_komoditas != null)
             {
                 tb_id_komoditas.Text = _komoditas.id_komoditas;
                 tb_id_komoditas.Enabled = false;
                 tb_nama_komoditas.Text = _komoditas.nama_komoditas;
+                tb_Jumlah.Text = _komoditas.jumlah.ToString(); 
                 tbs_satuan.Text = _komoditas.satuan;
                 this.Text = "Edit Komoditas";
             }
-            else 
+            else
             {
                 this.Text = "Tambah Komoditas";
             }
@@ -38,14 +40,21 @@ namespace Kelompok_2___PBO_Projects_Apps
                 return;
             }
 
-            Komoditas k = new Komoditas(tb_id_komoditas.Text, tb_nama_komoditas.Text, tbs_satuan.Text);
+            if (!int.TryParse(tb_Jumlah.Text, out int jumlah))
+            {
+                MessageBox.Show("Jumlah harus berupa angka!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if (_komoditas == null) 
+            Komoditas k = new Komoditas(tb_id_komoditas.Text, tb_nama_komoditas.Text, jumlah, tbs_satuan.Text); 
+
+            if (_komoditas == null)
             {
                 db.InsertKomoditas(k);
                 MessageBox.Show("Data berhasil ditambahkan!", "Sukses");
             }
-            else 
+            else
             {
                 db.UpdateKomoditas(k);
                 MessageBox.Show("Data berhasil diperbarui!", "Sukses");

@@ -33,6 +33,7 @@
             btn_logout = new Button();
             btn_kelola_data = new Button();
             btn_p_register = new Button();
+            btn_RiwayatTransaksi = new Button();
             SuspendLayout();
             // 
             // btn_olah_komoditas
@@ -44,7 +45,7 @@
             btn_olah_komoditas.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_olah_komoditas.FlatStyle = FlatStyle.Flat;
             btn_olah_komoditas.Location = new Point(412, 155);
-            btn_olah_komoditas.Margin = new Padding(2, 2, 2, 2);
+            btn_olah_komoditas.Margin = new Padding(2);
             btn_olah_komoditas.Name = "btn_olah_komoditas";
             btn_olah_komoditas.Size = new Size(99, 82);
             btn_olah_komoditas.TabIndex = 1;
@@ -60,7 +61,7 @@
             btn_logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_logout.FlatStyle = FlatStyle.Flat;
             btn_logout.Location = new Point(412, 254);
-            btn_logout.Margin = new Padding(2, 2, 2, 2);
+            btn_logout.Margin = new Padding(2);
             btn_logout.Name = "btn_logout";
             btn_logout.Size = new Size(99, 82);
             btn_logout.TabIndex = 2;
@@ -98,6 +99,22 @@
             btn_p_register.UseVisualStyleBackColor = false;
             btn_p_register.Click += btn_register_Click;
             // 
+            // btn_RiwayatTransaksi
+            // 
+            btn_RiwayatTransaksi.BackColor = Color.Transparent;
+            btn_RiwayatTransaksi.Cursor = Cursors.Hand;
+            btn_RiwayatTransaksi.FlatAppearance.BorderSize = 0;
+            btn_RiwayatTransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_RiwayatTransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_RiwayatTransaksi.FlatStyle = FlatStyle.Flat;
+            btn_RiwayatTransaksi.Location = new Point(131, 254);
+            btn_RiwayatTransaksi.Margin = new Padding(2);
+            btn_RiwayatTransaksi.Name = "btn_RiwayatTransaksi";
+            btn_RiwayatTransaksi.Size = new Size(99, 82);
+            btn_RiwayatTransaksi.TabIndex = 4;
+            btn_RiwayatTransaksi.UseVisualStyleBackColor = false;
+            btn_RiwayatTransaksi.Click += btn_RiwayatTransaksi_Click_1;
+            // 
             // FormAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -106,12 +123,13 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(782, 405);
             ControlBox = false;
+            Controls.Add(btn_RiwayatTransaksi);
             Controls.Add(btn_kelola_data);
             Controls.Add(btn_logout);
             Controls.Add(btn_olah_komoditas);
             Controls.Add(btn_p_register);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FormAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdmin";
@@ -124,5 +142,6 @@
         private Button btn_logout;
         private Button btn_kelola_data;
         private Button btn_p_register;
+        private Button btn_RiwayatTransaksi;
     }
 }

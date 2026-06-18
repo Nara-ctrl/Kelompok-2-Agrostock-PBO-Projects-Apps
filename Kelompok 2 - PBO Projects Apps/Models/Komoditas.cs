@@ -1,20 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Kelompok_2___PBO_Projects_Apps.Models
+﻿public class Komoditas
 {
-    public class Komoditas
-    {
-        public string id_komoditas { get; set; }
-        public string nama_komoditas { get; set; }
-        public string satuan { get; set; }
+    public string id_komoditas { get; set; }
+    public string nama_komoditas { get; set; }
+    public decimal jumlah { get; set; } // ✅ Tambah ini
+    public string satuan { get; set; }
 
-        public Komoditas(string id_komoditas, string nama_komoditas, string satuan)
-        {
-            this.id_komoditas = id_komoditas;
-            this.nama_komoditas = nama_komoditas;
-            this.satuan = satuan;
-        }
+    // Constructor lama (tetap ada agar tidak error di tempat lain)
+    public Komoditas(string id, string nama, string satuan)
+    {
+        id_komoditas = id;
+        nama_komoditas = nama;
+        jumlah = 0;
+        this.satuan = satuan;
+    }
+
+    // ✅ Constructor baru dengan jumlah
+    public Komoditas(string id, string nama, decimal jumlah, string satuan)
+    {
+        id_komoditas = id;
+        nama_komoditas = nama;
+        this.jumlah = jumlah;
+        this.satuan = satuan;
     }
 }

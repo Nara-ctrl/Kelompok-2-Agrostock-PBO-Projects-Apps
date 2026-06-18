@@ -21,5 +21,12 @@ namespace Kelompok_2___PBO_Projects_Apps
             FormLogin login = new FormLogin();
             login.Show();
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
+            this.Hide();
+        }
     }
 }

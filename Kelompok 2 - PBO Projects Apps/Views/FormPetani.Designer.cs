@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // FormPetani
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "FormPetani";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormPetani";
-            ResumeLayout(false);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPetani));
             btn_p_register = new Button();
             button1 = new Button();
-            button2 = new Button();
+            btn_logout = new Button();
             SuspendLayout();
             // 
             // btn_p_register
@@ -76,20 +64,21 @@
             button1.TabIndex = 2;
             button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_logout
             // 
-            button2.BackColor = Color.Transparent;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(526, 207);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 82);
-            button2.TabIndex = 3;
-            button2.UseVisualStyleBackColor = false;
+            btn_logout.BackColor = Color.Transparent;
+            btn_logout.Cursor = Cursors.Hand;
+            btn_logout.FlatAppearance.BorderSize = 0;
+            btn_logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_logout.FlatStyle = FlatStyle.Flat;
+            btn_logout.Location = new Point(526, 207);
+            btn_logout.Margin = new Padding(2);
+            btn_logout.Name = "btn_logout";
+            btn_logout.Size = new Size(99, 82);
+            btn_logout.TabIndex = 3;
+            btn_logout.UseVisualStyleBackColor = false;
+            btn_logout.Click += btn_logout_Click;
             // 
             // FormPetani
             // 
@@ -98,10 +87,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(982, 515);
-            Controls.Add(button2);
+            Controls.Add(btn_logout);
             Controls.Add(button1);
             Controls.Add(btn_p_register);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormPetani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPetani";
             ResumeLayout(false);
         }
@@ -110,6 +101,6 @@
 
         private Button btn_p_register;
         private Button button1;
-        private Button button2;
+        private Button btn_logout;
     }
 }
