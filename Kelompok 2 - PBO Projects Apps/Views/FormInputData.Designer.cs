@@ -76,7 +76,6 @@
             tb_id_komoditas.Name = "tb_id_komoditas";
             tb_id_komoditas.Size = new Size(155, 31);
             tb_id_komoditas.TabIndex = 3;
-            tb_id_komoditas.Text = "K";
             // 
             // tb_nama_komoditas
             // 

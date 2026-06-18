@@ -25,6 +25,8 @@ namespace Kelompok_2___PBO_Projects_Apps
             }
             else 
             {
+                tb_id_komoditas.Text = db.GenerateIdKomoditas();
+                tb_id_komoditas.Enabled = false;
                 this.Text = "Tambah Komoditas";
             }
         }
@@ -38,13 +40,7 @@ namespace Kelompok_2___PBO_Projects_Apps
                 return;
             }
 
-            string id = tb_id_komoditas.Text.Trim();
-            if (id == "")
-            {
-                id = db.GenerateIdKomoditas();
-            }
-
-            Komoditas k = new Komoditas(id, tb_nama_komoditas.Text, tbs_satuan.Text);
+            Komoditas k = new Komoditas(tb_id_komoditas.Text, tb_nama_komoditas.Text, tbs_satuan.Text);
 
             if (_komoditas == null)
             {
