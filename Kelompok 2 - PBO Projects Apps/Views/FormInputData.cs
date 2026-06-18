@@ -31,21 +31,27 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
-            if (tb_id_komoditas.Text == "" || tb_nama_komoditas.Text == "")
+            if (tb_nama_komoditas.Text == "")
             {
-                MessageBox.Show("ID dan Nama tidak boleh kosong!", "Error",
+                MessageBox.Show("Nama tidak boleh kosong!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            Komoditas k = new Komoditas(tb_id_komoditas.Text, tb_nama_komoditas.Text, tbs_satuan.Text);
+            string id = tb_id_komoditas.Text.Trim();
+            if (id == "")
+            {
+                id = db.GenerateIdKomoditas();
+            }
 
-            if (_komoditas == null) 
+            Komoditas k = new Komoditas(id, tb_nama_komoditas.Text, tbs_satuan.Text);
+
+            if (_komoditas == null)
             {
                 db.InsertKomoditas(k);
                 MessageBox.Show("Data berhasil ditambahkan!", "Sukses");
             }
-            else 
+            else
             {
                 db.UpdateKomoditas(k);
                 MessageBox.Show("Data berhasil diperbarui!", "Sukses");

@@ -90,6 +90,14 @@ namespace Kelompok_2___PBO_Projects_Apps
 
             if (e.ColumnIndex == dgv_komoditas.Columns["Hapus"].Index)
             {
+                if (db.CekStokKomoditas(id))
+                {
+                    MessageBox.Show(
+                        $"Komoditas '{nama}' masih memiliki data stok, tidak bisa dihapus.",
+                        "Tidak Bisa Dihapus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var konfirmasi = MessageBox.Show(
                     $"Hapus komoditas '{nama}'?",
                     "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

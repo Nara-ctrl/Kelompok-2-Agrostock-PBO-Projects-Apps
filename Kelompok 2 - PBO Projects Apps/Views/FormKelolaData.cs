@@ -28,5 +28,12 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
             back.Show();
             this.Hide();
         }
+
+        private void btnLihatStok_Click(object sender, EventArgs e)
+        {
+            FormLihatStock frm = new FormLihatStock();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

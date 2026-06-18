@@ -47,12 +47,19 @@ namespace Kelompok_2___PBO_Projects_Apps.Controllers
         }
 
         public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
-                                    decimal jumlah, string satuan)
+                              decimal jumlah, string satuan)
         {
             if (string.IsNullOrWhiteSpace(idKomoditas))
                 throw new Exception("Komoditas wajib dipilih!");
             if (jumlah <= 0)
                 throw new Exception("Jumlah harus lebih dari 0!");
+
+            if (jenis == "keluar")
+            {
+                decimal stokTersedia = db.GetJumlahStok(idKomoditas);
+                if (jumlah > stokTersedia)
+                    throw new Exception("Stok tidak cukup! Stok tersedia: " + stokTersedia);
+            }
 
             Transaksi transaksi;
             if (jenis == "masuk")
