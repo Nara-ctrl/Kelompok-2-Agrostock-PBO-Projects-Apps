@@ -94,7 +94,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormKelolaData";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormKelolaData";
+            Text = "Kelola Data (Admin)";
             ResumeLayout(false);
         }
 

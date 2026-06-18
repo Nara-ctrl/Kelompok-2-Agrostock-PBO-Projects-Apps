@@ -32,6 +32,7 @@
             dgv_komoditas = new DataGridView();
             TbSatuan = new Label();
             btnTambah = new Button();
+            btn_keluar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_komoditas).BeginInit();
             SuspendLayout();
             // 
@@ -43,12 +44,12 @@
             dgv_komoditas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgv_komoditas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_komoditas.GridColor = Color.LightGray;
-            dgv_komoditas.Location = new Point(121, 210);
+            dgv_komoditas.Location = new Point(145, 210);
             dgv_komoditas.Margin = new Padding(4);
             dgv_komoditas.Name = "dgv_komoditas";
             dgv_komoditas.ReadOnly = true;
             dgv_komoditas.RowHeadersWidth = 51;
-            dgv_komoditas.Size = new Size(746, 279);
+            dgv_komoditas.Size = new Size(682, 209);
             dgv_komoditas.TabIndex = 0;
             // 
             // TbSatuan
@@ -73,13 +74,27 @@
             btnTambah.UseVisualStyleBackColor = false;
             btnTambah.Click += btnTambah_Click;
             // 
+            // btn_keluar
+            // 
+            btn_keluar.BackColor = Color.Red;
+            btn_keluar.Location = new Point(709, 154);
+            btn_keluar.Margin = new Padding(4);
+            btn_keluar.Name = "btn_keluar";
+            btn_keluar.Size = new Size(118, 36);
+            btn_keluar.TabIndex = 8;
+            btn_keluar.Text = "Keluar";
+            btn_keluar.UseVisualStyleBackColor = false;
+            btn_keluar.Click += btn_keluar_Click;
+            // 
             // FormOlahKomoditas
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1000, 562);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(978, 506);
+            ControlBox = false;
+            Controls.Add(btn_keluar);
             Controls.Add(btnTambah);
             Controls.Add(TbSatuan);
             Controls.Add(dgv_komoditas);
@@ -87,7 +102,7 @@
             Margin = new Padding(4);
             Name = "FormOlahKomoditas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form Mengolah Komoditas";
+            Text = "Kelola Komoditas (Admin)";
             Load += Formmengolahkomoditas_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_komoditas).EndInit();
             ResumeLayout(false);
@@ -99,5 +114,6 @@
         private DataGridView dgv_komoditas;
         private Label TbSatuan;
         private Button btnTambah;
+        private Button btn_keluar;
     }
 }

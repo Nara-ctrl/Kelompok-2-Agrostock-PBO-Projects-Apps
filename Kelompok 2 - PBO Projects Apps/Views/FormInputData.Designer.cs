@@ -76,6 +76,7 @@
             tb_id_komoditas.Name = "tb_id_komoditas";
             tb_id_komoditas.Size = new Size(155, 31);
             tb_id_komoditas.TabIndex = 3;
+            tb_id_komoditas.Text = "K";
             // 
             // tb_nama_komoditas
             // 
@@ -124,8 +125,9 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(429, 312);
+            ControlBox = false;
             Controls.Add(tbs_satuan);
             Controls.Add(btn_batal);
             Controls.Add(btn_simpan);
@@ -138,7 +140,7 @@
             Margin = new Padding(4);
             Name = "FormInputData";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Forminputdata";
+            Text = "Input Data Komoditas";
             ResumeLayout(false);
             PerformLayout();
         }

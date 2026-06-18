@@ -114,5 +114,12 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
 
         }
+
+        private void btn_keluar_Click(object sender, EventArgs e)
+        {
+            FormAdmin back = new FormAdmin();
+            back.Show();
+            this.Hide();
+        }
     }
 }

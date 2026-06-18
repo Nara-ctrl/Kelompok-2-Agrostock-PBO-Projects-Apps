@@ -76,7 +76,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormLihatStock";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormLihatStock";
+            Text = "Lihat Stok (Admin)";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
