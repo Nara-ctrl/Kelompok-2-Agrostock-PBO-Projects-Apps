@@ -43,7 +43,6 @@
             tb_username.Name = "tb_username";
             tb_username.Size = new Size(278, 24);
             tb_username.TabIndex = 0;
-            tb_username.TextChanged += tb_username_TextChanged;
             // 
             // L_username
             // 
@@ -74,7 +73,6 @@
             tb_password.Name = "tb_password";
             tb_password.Size = new Size(278, 24);
             tb_password.TabIndex = 3;
-            tb_password.TextChanged += tb_password_TextChanged;
             // 
             // btn_login
             // 
