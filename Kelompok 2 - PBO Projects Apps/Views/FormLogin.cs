@@ -56,5 +56,11 @@ namespace Kelompok_2___PBO_Projects_Apps
                 MessageBox.Show(ex.Message);
             }
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Application.Exit();
+        }
     }
 }
