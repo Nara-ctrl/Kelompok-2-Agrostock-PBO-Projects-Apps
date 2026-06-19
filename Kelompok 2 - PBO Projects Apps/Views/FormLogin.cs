@@ -14,16 +14,6 @@ namespace Kelompok_2___PBO_Projects_Apps
             tb_password.UseSystemPasswordChar = true;
         }
 
-        private void tb_username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
             try
@@ -55,6 +45,12 @@ namespace Kelompok_2___PBO_Projects_Apps
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Application.Exit();
         }
     }
 }
