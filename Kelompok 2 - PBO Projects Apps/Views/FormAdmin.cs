@@ -52,11 +52,6 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btn_RiwayatTransaksi_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_RiwayatTransaksi_Click_1(object sender, EventArgs e)
-        {
             FormRiwayatTransaksi transaksi = new FormRiwayatTransaksi();
             transaksi.ShowDialog();
             this.Hide();

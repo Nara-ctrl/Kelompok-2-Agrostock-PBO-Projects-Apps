@@ -44,50 +44,59 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(62, 69);
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(62, 64);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 20);
+            label1.Size = new Size(121, 25);
             label1.TabIndex = 0;
             label1.Text = "ID Komoditas";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(62, 108);
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(62, 113);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(125, 20);
+            label2.Size = new Size(150, 25);
             label2.TabIndex = 1;
             label2.Text = "Nama Komoditas";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(62, 179);
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(62, 159);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(54, 20);
+            label3.Size = new Size(66, 25);
             label3.TabIndex = 2;
             label3.Text = "Satuan";
             // 
             // tb_id_komoditas
             // 
-            tb_id_komoditas.Location = new Point(202, 66);
+            tb_id_komoditas.Location = new Point(236, 60);
+            tb_id_komoditas.Margin = new Padding(4, 4, 4, 4);
             tb_id_komoditas.Name = "tb_id_komoditas";
-            tb_id_komoditas.Size = new Size(125, 27);
+            tb_id_komoditas.Size = new Size(155, 31);
             tb_id_komoditas.TabIndex = 3;
             // 
             // tb_nama_komoditas
             // 
-            tb_nama_komoditas.Location = new Point(202, 105);
+            tb_nama_komoditas.Location = new Point(236, 109);
+            tb_nama_komoditas.Margin = new Padding(4, 4, 4, 4);
             tb_nama_komoditas.Name = "tb_nama_komoditas";
-            tb_nama_komoditas.Size = new Size(125, 27);
+            tb_nama_komoditas.Size = new Size(155, 31);
             tb_nama_komoditas.TabIndex = 4;
             // 
             // btn_simpan
             // 
             btn_simpan.BackColor = Color.YellowGreen;
-            btn_simpan.Location = new Point(58, 242);
+            btn_simpan.Location = new Point(53, 222);
+            btn_simpan.Margin = new Padding(4, 4, 4, 4);
             btn_simpan.Name = "btn_simpan";
-            btn_simpan.Size = new Size(104, 35);
+            btn_simpan.Size = new Size(130, 44);
             btn_simpan.TabIndex = 6;
             btn_simpan.Text = "Simpan";
             btn_simpan.UseVisualStyleBackColor = false;
@@ -96,9 +105,10 @@
             // btn_batal
             // 
             btn_batal.BackColor = Color.Red;
-            btn_batal.Location = new Point(218, 242);
+            btn_batal.Location = new Point(255, 224);
+            btn_batal.Margin = new Padding(4, 4, 4, 4);
             btn_batal.Name = "btn_batal";
-            btn_batal.Size = new Size(109, 34);
+            btn_batal.Size = new Size(136, 42);
             btn_batal.TabIndex = 7;
             btn_batal.Text = "Batal";
             btn_batal.UseVisualStyleBackColor = false;
@@ -109,9 +119,10 @@
             tbs_satuan.DropDownStyle = ComboBoxStyle.DropDownList;
             tbs_satuan.FormattingEnabled = true;
             tbs_satuan.Items.AddRange(new object[] { "Kg", "Ton" });
-            tbs_satuan.Location = new Point(202, 176);
+            tbs_satuan.Location = new Point(237, 158);
+            tbs_satuan.Margin = new Padding(4, 4, 4, 4);
             tbs_satuan.Name = "tbs_satuan";
-            tbs_satuan.Size = new Size(125, 28);
+            tbs_satuan.Size = new Size(155, 33);
             tbs_satuan.TabIndex = 8;
             // 
             // label4
@@ -127,16 +138,16 @@
             // 
             tb_Jumlah.Location = new Point(202, 140);
             tb_Jumlah.Name = "tb_Jumlah";
-            tb_Jumlah.Size = new Size(125, 27);
+            tb_Jumlah.Size = new Size(125, 31);
             tb_Jumlah.TabIndex = 10;
             // 
             // FormInputData
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(429, 312);
+            ClientSize = new Size(455, 306);
             ControlBox = false;
             Controls.Add(tbs_satuan);
             Controls.Add(btn_batal);
@@ -147,6 +158,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "FormInputData";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Input Data Komoditas";

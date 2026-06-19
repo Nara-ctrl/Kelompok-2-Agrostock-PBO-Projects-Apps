@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPetani));
             btn_kelola_profil = new Button();
             btn_logout = new Button();
-            button2 = new Button();
             btn_riwayat = new Button();
             SuspendLayout();
             // 
@@ -67,21 +66,6 @@
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
             // 
-            // btn_logout
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(658, 259);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(124, 102);
-            button2.TabIndex = 3;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // btn_riwayat
             // 
             btn_riwayat.BackColor = Color.Transparent;
@@ -107,7 +91,6 @@
             ClientSize = new Size(978, 506);
             ControlBox = false;
             Controls.Add(btn_riwayat);
-            Controls.Add(button2);
             Controls.Add(btn_logout);
             Controls.Add(btn_kelola_profil);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -122,7 +105,6 @@
 
         private Button btn_kelola_profil;
         private Button btn_logout;
-        private Button button2;
         private Button btn_riwayat;
     }
 }

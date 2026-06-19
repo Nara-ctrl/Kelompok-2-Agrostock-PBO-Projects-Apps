@@ -108,13 +108,13 @@
             btn_RiwayatTransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_RiwayatTransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_RiwayatTransaksi.FlatStyle = FlatStyle.Flat;
-            btn_RiwayatTransaksi.Location = new Point(131, 254);
+            btn_RiwayatTransaksi.Location = new Point(164, 318);
             btn_RiwayatTransaksi.Margin = new Padding(2);
             btn_RiwayatTransaksi.Name = "btn_RiwayatTransaksi";
-            btn_RiwayatTransaksi.Size = new Size(99, 82);
+            btn_RiwayatTransaksi.Size = new Size(124, 102);
             btn_RiwayatTransaksi.TabIndex = 4;
             btn_RiwayatTransaksi.UseVisualStyleBackColor = false;
-            btn_RiwayatTransaksi.Click += btn_RiwayatTransaksi_Click_1;
+            btn_RiwayatTransaksi.Click += btn_RiwayatTransaksi_Click;
             // 
             // FormAdmin
             // 
