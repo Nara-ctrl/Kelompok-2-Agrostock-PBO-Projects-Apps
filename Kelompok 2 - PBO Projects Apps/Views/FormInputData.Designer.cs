@@ -136,9 +136,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(415, 332);
-            Controls.Add(tb_Jumlah);
-            Controls.Add(label4);
+            ClientSize = new Size(429, 312);
+            ControlBox = false;
             Controls.Add(tbs_satuan);
             Controls.Add(btn_batal);
             Controls.Add(btn_simpan);
@@ -150,7 +149,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormInputData";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Forminputdata";
+            Text = "Input Data Komoditas";
             ResumeLayout(false);
             PerformLayout();
         }

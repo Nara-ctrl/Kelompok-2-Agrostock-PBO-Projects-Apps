@@ -118,7 +118,7 @@
             MinimizeBox = false;
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormLogin";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -9,7 +9,10 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
 {
     internal class DatabaseHelper
     {
-        private static string connString = "Host=localhost;Port=5432;Database=AgrostockApp;Username=postgres;Password=admin";
+        private static string connString = "Host=localhost;Port=5432;" +
+            "Database=ProjectPboS2;" +
+            "Username=postgres;" +
+            "Password=zen123";
 
 
         public List<Komoditas> GetAllKomoditas()
@@ -17,11 +20,11 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             List<Komoditas> list = new List<Komoditas>();
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            using var cmd = new NpgsqlCommand(@"
-        SELECT k.id_komoditas, k.nama_komoditas, COALESCE(s.jumlah, 0) AS jumlah, k.satuan 
-        FROM komoditas k
-        LEFT JOIN stok s ON k.id_komoditas = s.id_komoditas
-        ORDER BY k.id_komoditas ASC", conn);
+            using var cmd = new NpgsqlCommand(
+                "SELECT id_komoditas, nama_komoditas, satuan " +
+                "FROM komoditas " +
+                "WHERE status = true " +
+                "ORDER BY id_komoditas ASC", conn);
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -35,6 +38,28 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             return list; 
         }
 
+        public string GenerateIdKomoditas()
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            using var cmd = new NpgsqlCommand(
+                "SELECT id_komoditas " +
+                "FROM komoditas " +
+                "WHERE id_komoditas LIKE 'K%' " +
+                "ORDER BY id_komoditas DESC LIMIT 1", conn);
+            var hasil = cmd.ExecuteScalar();
+
+            int idBaru = 1;
+            if (hasil != null)
+            {
+                string idTerakhir = hasil.ToString();
+                string angkaStr = idTerakhir.Substring(1);
+                int angka = Convert.ToInt32(angkaStr);
+                idBaru = angka + 1;
+            }
+
+            return "K" + idBaru.ToString("000");
+        }
 
         public void InsertKomoditas(Komoditas k)
         {
@@ -42,7 +67,8 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             conn.Open();
 
             using var cmd = new NpgsqlCommand(
-                "INSERT INTO komoditas (id_komoditas, nama_komoditas, satuan) VALUES (@id, @nama, @satuan)", conn);
+                "INSERT INTO komoditas (id_komoditas, nama_komoditas, satuan) " +
+                "VALUES (@id, @nama, @satuan)", conn);
             cmd.Parameters.AddWithValue("id", k.id_komoditas);
             cmd.Parameters.AddWithValue("nama", k.nama_komoditas);
             cmd.Parameters.AddWithValue("satuan", k.satuan);
@@ -61,7 +87,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             conn.Open();
 
             using var cmd = new NpgsqlCommand(
-                "UPDATE komoditas SET nama_komoditas=@nama, satuan=@satuan WHERE id_komoditas=@id", conn);
+                "UPDATE komoditas " +
+                "SET nama_komoditas=@nama, satuan=@satuan " +
+                "WHERE id_komoditas=@id", conn);
             cmd.Parameters.AddWithValue("id", k.id_komoditas);
             cmd.Parameters.AddWithValue("nama", k.nama_komoditas);
             cmd.Parameters.AddWithValue("satuan", k.satuan);
@@ -74,16 +102,27 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             cmdStok.ExecuteNonQuery();
         }
 
+        public bool CekStokKomoditas(string id)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            using var cmd = new NpgsqlCommand(
+                "SELECT COALESCE(SUM(jumlah), 0) " +
+                "FROM stok " +
+                "WHERE id_komoditas=@id", conn);
+            cmd.Parameters.AddWithValue("id", id);
+            decimal jumlahData = Convert.ToInt32(cmd.ExecuteScalar());
+            return jumlahData > 0;
+        }
+
         public void DeleteKomoditas(string id)
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-
-            using var cmdStok = new NpgsqlCommand("DELETE FROM stok WHERE id_komoditas=@id", conn);
-            cmdStok.Parameters.AddWithValue("id", id);
-            cmdStok.ExecuteNonQuery();
-
-            using var cmd = new NpgsqlCommand("DELETE FROM komoditas WHERE id_komoditas=@id", conn);
+            using var cmd = new NpgsqlCommand(
+                "UPDATE komoditas " +
+                "SET status = false " +
+                "WHERE id_komoditas=@id", conn);
             cmd.Parameters.AddWithValue("id", id);
             cmd.ExecuteNonQuery();
         }
@@ -101,7 +140,11 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
 
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = "SELECT id, role FROM users WHERE username = @username AND password = @password";
+
+            string query = "SELECT id, role " +
+                "FROM users " +
+                "WHERE username = @username AND password = @password";
+
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
@@ -121,7 +164,10 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = "SELECT nama, alamat, no_tlp FROM admin WHERE id_user = @id";
+
+            string query = "SELECT nama, alamat, no_tlp " +
+                "FROM admin WHERE id_user = @id";
+
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("id", userId);
             using var reader = cmd.ExecuteReader();
@@ -134,7 +180,10 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = "SELECT nama, alamat, no_hp, id_petani FROM petani WHERE id_user = @id";
+
+            string query = "SELECT nama, alamat, no_tlp, id_petani " +
+                "FROM petani WHERE id_user = @id";
+
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("id", userId);
             using var reader = cmd.ExecuteReader();
@@ -147,7 +196,10 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string q1 = "INSERT INTO users (username, password, role) VALUES (@username, @password, 'petani') RETURNING id";
+
+            string q1 = "INSERT INTO users (username, password, role) " +
+                "VALUES (@username, @password, 'petani') RETURNING id";
+
             int newId;
             using (var cmd = new NpgsqlCommand(q1, conn))
             {
@@ -155,7 +207,10 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 cmd.Parameters.AddWithValue("password", password);
                 newId = (int)cmd.ExecuteScalar();
             }
-            string q2 = "INSERT INTO petani (id_user, nama, alamat, no_tlp) VALUES (@id_user, @nama, @alamat, @no_tlp)";
+
+            string q2 = "INSERT INTO petani (id_user, nama, alamat, no_tlp) " +
+                "VALUES (@id_user, @nama, @alamat, @no_tlp)";
+
             using (var cmd = new NpgsqlCommand(q2, conn))
             {
                 cmd.Parameters.AddWithValue("id_user", newId);
@@ -171,12 +226,32 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             var list = new List<(int, string)>();
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = "SELECT id_petani, nama FROM petani ORDER BY nama ASC";
+
+            string query = "SELECT id_petani, nama " +
+                "FROM petani ORDER BY nama ASC";
+
             using var cmd = new NpgsqlCommand(query, conn);
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
                 list.Add((reader.GetInt32(0), reader.GetString(1)));
             return list;
+        }
+
+        public decimal GetJumlahStok(string idKomoditas)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            using var cmd = new NpgsqlCommand(
+                "SELECT jumlah " +
+                "FROM stok " +
+                "WHERE id_komoditas = @id", conn);
+            cmd.Parameters.AddWithValue("id", idKomoditas);
+            var hasil = cmd.ExecuteScalar();
+
+            if (hasil == null)
+                return 0;
+
+            return Convert.ToDecimal(hasil);
         }
 
         public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
@@ -185,7 +260,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
 
-            string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal) VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal)";
+            string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal) 
+                        VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal)";
+
             using (var cmd = new NpgsqlCommand(q1, conn))
             {
                 cmd.Parameters.AddWithValue("id_komoditas", idKomoditas);
@@ -233,26 +310,86 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 cmd.ExecuteNonQuery();
             }
         }
-        public DataTable GetRiwayatTransaksi()
+
+        public void UpdateProfilPetani(int userId, string username, string password, string alamat, string noTlp)
         {
-            DataTable dt = new DataTable();
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
-            string query = @"
-        SELECT 
-            ROW_NUMBER() OVER (ORDER BY t.tanggal DESC) AS no,
-            t.id_komoditas                              AS id_komoditas,
-            k.nama_komoditas                            AS nama_komoditas,
-            t.tanggal                                   AS tanggal_transaksi,
-            CASE WHEN t.jenis = 'keluar' THEN -t.jumlah ELSE t.jumlah END AS jumlah,
-            t.satuan
-        FROM transaksi t
-        JOIN komoditas k ON t.id_komoditas = k.id_komoditas
-        ORDER BY t.tanggal DESC";
+
+            string q1 = @"UPDATE users SET username=@username, password=@password 
+                        WHERE id=@id";
+
+            using (var cmd =
+                new NpgsqlCommand(q1, conn))
+            {
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+
+            string q2 = @"UPDATE petani SET alamat=@alamat, no_tlp=@no_tlp 
+                        WHERE id_user=@id";
+
+            using (var cmd = new NpgsqlCommand(q2, conn))
+            {
+                cmd.Parameters.AddWithValue("alamat", alamat);
+                cmd.Parameters.AddWithValue("no_tlp", noTlp);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public (string nama, string alamat, string noTlp, string username, string password)
+        GetDataProfilPetani(int userId)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string query = @"SELECT p.nama, p.alamat, p.no_tlp, u.username, u.password 
+                           FROM petani p 
+                           JOIN users u ON p.id_user = u.id 
+                           WHERE p.id_user = @id";
+
             using var cmd = new NpgsqlCommand(query, conn);
-            using var adapter = new NpgsqlDataAdapter(cmd);
-            adapter.Fill(dt);
-            return dt;
+            cmd.Parameters.AddWithValue("id", userId);
+            using var reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return (
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4)
+                );
+            }
+            return ("", "", "", "", "");
+        }
+        public List<Stok> GetAllStok()
+        {
+            List<Stok> list = new List<Stok>();
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string query = @"SELECT k.id_komoditas, k.nama_komoditas, k.satuan, COALESCE(s.jumlah, 0)
+                           FROM komoditas k
+                           LEFT JOIN stok s ON k.id_komoditas = s.id_komoditas
+                           WHERE k.status = true
+                           ORDER BY k.id_komoditas ASC";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new Stok(
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetDecimal(3)
+                ));
+            }
+            return list;
         }
     }
 }

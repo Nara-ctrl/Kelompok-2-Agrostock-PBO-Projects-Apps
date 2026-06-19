@@ -59,5 +59,15 @@ namespace Kelompok_2___PBO_Projects_Apps.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_06_14_at_22_58_38 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-06-14 at 22.58.38", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

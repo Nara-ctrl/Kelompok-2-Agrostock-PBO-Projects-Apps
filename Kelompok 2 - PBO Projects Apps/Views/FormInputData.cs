@@ -27,15 +27,17 @@ namespace Kelompok_2___PBO_Projects_Apps
             }
             else
             {
+                tb_id_komoditas.Text = db.GenerateIdKomoditas();
+                tb_id_komoditas.Enabled = false;
                 this.Text = "Tambah Komoditas";
             }
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
-            if (tb_id_komoditas.Text == "" || tb_nama_komoditas.Text == "")
+            if (tb_nama_komoditas.Text == "")
             {
-                MessageBox.Show("ID dan Nama tidak boleh kosong!", "Error",
+                MessageBox.Show("Nama tidak boleh kosong!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
