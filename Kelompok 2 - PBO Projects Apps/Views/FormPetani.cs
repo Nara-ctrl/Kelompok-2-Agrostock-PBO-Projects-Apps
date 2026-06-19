@@ -15,13 +15,6 @@ namespace Kelompok_2___PBO_Projects_Apps
             InitializeComponent();
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            FormLogin logout = new FormLogin();
-            logout.Show();
-            this.Hide();
-        }
-
         private void btn_kelola_profil_Click(object sender, EventArgs e)
         {
 

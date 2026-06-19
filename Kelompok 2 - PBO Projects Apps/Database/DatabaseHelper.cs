@@ -10,9 +10,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
     internal class DatabaseHelper
     {
         private static string connString = "Host=localhost;Port=5432;" +
-            "Database=ProjectPboS2;" +
+            "Database=AgrostockApp;" +
             "Username=postgres;" +
-            "Password=zen123";
+            "Password=admin";
 
 
         public List<Komoditas> GetAllKomoditas()
@@ -21,18 +21,17 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
             using var cmd = new NpgsqlCommand(
-                "SELECT id_komoditas, nama_komoditas, satuan " +
-                "FROM komoditas " +
-                "WHERE status = true " +
-                "ORDER BY id_komoditas ASC", conn);
+    "SELECT id_komoditas, nama_komoditas, satuan " +
+    "FROM komoditas " +
+    "WHERE status = true " +
+    "ORDER BY id_komoditas ASC", conn);
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 list.Add(new Komoditas(
                     reader.GetString(0),
                     reader.GetString(1),
-                    reader.GetDecimal(2),
-                    reader.GetString(3)
+                    reader.GetString(2)
                 ));
             }
             return list; 
@@ -77,7 +76,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var cmdStok = new NpgsqlCommand(
                 "INSERT INTO stok (id_komoditas, jumlah) VALUES (@id, @jumlah)", conn);
             cmdStok.Parameters.AddWithValue("id", k.id_komoditas);
-            cmdStok.Parameters.AddWithValue("jumlah", k.jumlah);
             cmdStok.ExecuteNonQuery();
         }
 
@@ -98,7 +96,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var cmdStok = new NpgsqlCommand(
                 "UPDATE stok SET jumlah=@jumlah WHERE id_komoditas=@id", conn);
             cmdStok.Parameters.AddWithValue("id", k.id_komoditas);
-            cmdStok.Parameters.AddWithValue("jumlah", k.jumlah);
             cmdStok.ExecuteNonQuery();
         }
 
@@ -390,6 +387,32 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 ));
             }
             return list;
+        }
+        public DataTable GetRiwayatTransaksi()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using var conn = new NpgsqlConnection(connString);
+                conn.Open();
+                using var cmd = new NpgsqlCommand(
+                    @"SELECT ROW_NUMBER() OVER (ORDER BY t.tanggal DESC) AS no,
+                     t.id_komoditas,
+                     k.nama_komoditas,
+                     t.tanggal AS tanggal_transaksi,
+                     CASE WHEN t.jenis = 'keluar' THEN -t.jumlah ELSE t.jumlah END AS jumlah,
+                     k.satuan
+              FROM transaksi t
+              JOIN komoditas k ON t.id_komoditas = k.id_komoditas
+              ORDER BY t.tanggal DESC", conn);
+                using var reader = cmd.ExecuteReader();
+                dt.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return dt;
         }
     }
 }
