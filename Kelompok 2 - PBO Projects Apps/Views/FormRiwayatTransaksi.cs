@@ -39,11 +39,11 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
                 dgv_R_Transaksi.Columns["tanggal_transaksi"].DefaultCellStyle.Format = "dd-MMM-yyyy HH:mm";
 
                 dgv_R_Transaksi.Columns["no"].Width = 40;
-                dgv_R_Transaksi.Columns["id_komoditas"].Width = 100;
-                dgv_R_Transaksi.Columns["nama_komoditas"].Width = 150;
-                dgv_R_Transaksi.Columns["tanggal_transaksi"].Width = 160;
-                dgv_R_Transaksi.Columns["jumlah"].Width = 180;
-                dgv_R_Transaksi.Columns["satuan"].Width = 80;
+                dgv_R_Transaksi.Columns["id_komoditas"].Width = 90;
+                dgv_R_Transaksi.Columns["nama_komoditas"].Width = 130;
+                dgv_R_Transaksi.Columns["tanggal_transaksi"].Width = 140;
+                dgv_R_Transaksi.Columns["jumlah"].Width = 90;
+                dgv_R_Transaksi.Columns["satuan"].Width = 90;
 
                 foreach (DataGridViewRow row in dgv_R_Transaksi.Rows)
                 {
@@ -68,7 +68,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
             dgv_R_Transaksi.EnableHeadersVisualStyles = false;
             dgv_R_Transaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            dgv_R_Transaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSkyBlue;
+            dgv_R_Transaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.LimeGreen;
             dgv_R_Transaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             dgv_R_Transaksi.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
             dgv_R_Transaksi.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5f, FontStyle.Regular);

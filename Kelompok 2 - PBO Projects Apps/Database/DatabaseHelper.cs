@@ -10,9 +10,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
     internal class DatabaseHelper
     {
         private static string connString = "Host=localhost;Port=5432;" +
-            "Database=ProjectPboS2;" +
+            "Database=AgrostockApp;" +
             "Username=postgres;" +
-            "Password=zen123";
+            "Password=admin";
 
 
         public List<Komoditas> GetAllKomoditas()
@@ -76,7 +76,8 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var cmdStok = new NpgsqlCommand(
                 "INSERT INTO stok (id_komoditas, jumlah) VALUES (@id, @jumlah)", conn);
             cmdStok.Parameters.AddWithValue("id", k.id_komoditas);
-            cmdStok.ExecuteNonQuery();
+            cmdStok.Parameters.AddWithValue("jumlah", 0);
+            cmdStok.ExecuteNonQuery(); 
         }
 
         public void UpdateKomoditas(Komoditas k)
