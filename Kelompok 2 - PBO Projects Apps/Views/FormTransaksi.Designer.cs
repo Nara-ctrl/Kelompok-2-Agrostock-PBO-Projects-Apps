@@ -38,13 +38,15 @@
             tb_jumlah = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            cb_satuan = new ComboBox();
             lbl_status = new Label();
             lbl_tanggal = new Label();
             btn_simpan = new Button();
             btn_batal = new Button();
             label2 = new Label();
             label5 = new Label();
+            lbl_satuan = new Label();
+            lbl_stok = new Label();
+            value_stok = new Label();
             SuspendLayout();
             // 
             // btn_masuk
@@ -78,6 +80,7 @@
             cb_komoditas.Name = "cb_komoditas";
             cb_komoditas.Size = new Size(156, 33);
             cb_komoditas.TabIndex = 2;
+            cb_komoditas.SelectedIndexChanged += cb_komoditas_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -138,14 +141,6 @@
             label4.TabIndex = 8;
             label4.Text = "Satuan :";
             // 
-            // cb_satuan
-            // 
-            cb_satuan.FormattingEnabled = true;
-            cb_satuan.Location = new Point(282, 382);
-            cb_satuan.Name = "cb_satuan";
-            cb_satuan.Size = new Size(156, 33);
-            cb_satuan.TabIndex = 9;
-            // 
             // lbl_status
             // 
             lbl_status.AutoSize = true;
@@ -188,7 +183,7 @@
             btn_batal.Name = "btn_batal";
             btn_batal.Size = new Size(112, 34);
             btn_batal.TabIndex = 13;
-            btn_batal.Text = "Batal";
+            btn_batal.Text = "Keluar";
             btn_batal.UseVisualStyleBackColor = true;
             btn_batal.Click += btn_batal_Click;
             // 
@@ -214,6 +209,39 @@
             label5.TabIndex = 15;
             label5.Text = "Status :";
             // 
+            // lbl_satuan
+            // 
+            lbl_satuan.AutoSize = true;
+            lbl_satuan.BackColor = Color.Transparent;
+            lbl_satuan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_satuan.Location = new Point(276, 383);
+            lbl_satuan.Name = "lbl_satuan";
+            lbl_satuan.Size = new Size(79, 25);
+            lbl_satuan.TabIndex = 16;
+            lbl_satuan.Text = "Satuan?";
+            // 
+            // lbl_stok
+            // 
+            lbl_stok.AutoSize = true;
+            lbl_stok.BackColor = Color.Transparent;
+            lbl_stok.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_stok.Location = new Point(155, 295);
+            lbl_stok.Name = "lbl_stok";
+            lbl_stok.Size = new Size(60, 25);
+            lbl_stok.TabIndex = 17;
+            lbl_stok.Text = "Stok :";
+            // 
+            // value_stok
+            // 
+            value_stok.AutoSize = true;
+            value_stok.BackColor = Color.Transparent;
+            value_stok.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            value_stok.Location = new Point(276, 295);
+            value_stok.Name = "value_stok";
+            value_stok.Size = new Size(58, 25);
+            value_stok.TabIndex = 18;
+            value_stok.Text = "Stok?";
+            // 
             // FormTransaksi
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -222,13 +250,15 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
             ControlBox = false;
+            Controls.Add(value_stok);
+            Controls.Add(lbl_stok);
+            Controls.Add(lbl_satuan);
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(btn_batal);
             Controls.Add(btn_simpan);
             Controls.Add(lbl_tanggal);
             Controls.Add(lbl_status);
-            Controls.Add(cb_satuan);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(tb_jumlah);
@@ -257,12 +287,14 @@
         private TextBox tb_jumlah;
         private Label label3;
         private Label label4;
-        private ComboBox cb_satuan;
         private Label lbl_status;
         private Label lbl_tanggal;
         private Button btn_simpan;
         private Button btn_batal;
         private Label label2;
         private Label label5;
+        private Label lbl_satuan;
+        private Label lbl_stok;
+        private Label value_stok;
     }
 }

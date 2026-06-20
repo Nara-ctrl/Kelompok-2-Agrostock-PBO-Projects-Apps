@@ -15,55 +15,75 @@ namespace Kelompok_2___PBO_Projects_Apps
     public partial class FormTransaksi : Form
     {
         private UserController uc = new UserController();
+        private DatabaseHelper db = new DatabaseHelper();
         private string _panelAktif = "masuk";
+        private List<Komoditas> _listKomoditasMasuk = new List<Komoditas>();
+        private List<Komoditas> _listKomoditasKeluar = new List<Komoditas>();
+        private List<(int idPetani, string nama)> _listPetaniMasuk = new List<(int, string)>();
+        private List<(int idPetani, string nama)> _listPetaniKeluar = new List<(int, string)>();
 
         public FormTransaksi()
         {
             InitializeComponent();
-            LoadKomoditas();
-            LoadPetani();
-            LoadSatuan();
             TampilkanPanel("masuk");
-            lbl_tanggal.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            lbl_tanggal.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void LoadKomoditas()
+        private void LoadKomoditasMasuk()
         {
-            var list = new DatabaseHelper().GetAllKomoditas();
-
+            _listKomoditasMasuk = db.GetAllKomoditas();
             cb_komoditas.Items.Clear();
-            foreach (var komoditas in list)
-            {
-                cb_komoditas.Items.Add(komoditas.nama_komoditas);
-            }
-
+            foreach (var k in _listKomoditasMasuk)
+                cb_komoditas.Items.Add(k.nama_komoditas);
             if (cb_komoditas.Items.Count > 0)
                 cb_komoditas.SelectedIndex = 0;
         }
-        private void LoadPetani()
+
+        private void LoadKomoditasKeluar()
         {
-            var list = uc.GetPetaniList();
+            _listKomoditasKeluar = db.GetKomoditasStokMasuk();
+            cb_komoditas.Items.Clear();
+            foreach (var k in _listKomoditasKeluar)
+                cb_komoditas.Items.Add(k.nama_komoditas);
+            if (cb_komoditas.Items.Count > 0)
+                cb_komoditas.SelectedIndex = 0;
+        }
 
+        private void LoadPetaniMasuk()
+        {
+            _listPetaniMasuk = uc.GetPetaniList();
             cb_petani.Items.Clear();
-            foreach (var petani in list)
-            {
-                cb_petani.Items.Add(petani.nama);
-            }
-
+            foreach (var p in _listPetaniMasuk)
+                cb_petani.Items.Add(p.nama);
             if (cb_petani.Items.Count > 0)
                 cb_petani.SelectedIndex = 0;
         }
 
-        private void LoadSatuan()
+        private void cb_komoditas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cb_satuan.Items.Clear();
-            cb_satuan.Items.Add("kg");
-            cb_satuan.Items.Add("ton");
-            cb_satuan.Items.Add("kwintal");
-            cb_satuan.Items.Add("ikat");
-            cb_satuan.Items.Add("karung");
-            cb_satuan.Items.Add("buah");
-            cb_satuan.SelectedIndex = 0;
+            if (cb_komoditas.SelectedIndex < 0) return;
+
+            string idKomoditas;
+            string satuan;
+
+            if (_panelAktif == "masuk")
+            {
+                idKomoditas = _listKomoditasMasuk[cb_komoditas.SelectedIndex].id_komoditas;
+                satuan = _listKomoditasMasuk[cb_komoditas.SelectedIndex].satuan;
+            }
+            else
+            {
+                idKomoditas = _listKomoditasKeluar[cb_komoditas.SelectedIndex].id_komoditas;
+                satuan = _listKomoditasKeluar[cb_komoditas.SelectedIndex].satuan;
+            }
+
+            lbl_satuan.Text = satuan;
+
+            if (_panelAktif == "keluar")
+            {
+                decimal stok = db.GetJumlahStok(idKomoditas);
+                value_stok.Text = $"{stok}";
+            }
         }
 
         private void btn_masuk_Click(object sender, EventArgs e)
@@ -80,26 +100,58 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
             _panelAktif = jenis;
 
-            lbl_petani.Visible = jenis == "masuk";
-            cb_petani.Visible = jenis == "masuk";
+            if (jenis == "masuk")
+            {
+                LoadKomoditasMasuk();
+                LoadPetaniMasuk();
+                lbl_petani.Visible = true;
+                cb_petani.Visible = true;
+                lbl_stok.Visible = false;
+                value_stok.Visible = false;
+            }
+            else
+            {
+                LoadKomoditasKeluar();
+                lbl_petani.Visible = false;
+                cb_petani.Visible = false;
+                lbl_stok.Visible = true;
+                value_stok.Visible = true;
+            }
+
+            cb_komoditas_SelectedIndexChanged(null, EventArgs.Empty);
 
             lbl_status.Text = jenis == "masuk" ? "Masuk" : "Keluar";
-
-            btn_masuk.BackColor = jenis == "masuk" ? System.Drawing.Color.Green : System.Drawing.Color.LightGray;
-            btn_keluar.BackColor = jenis == "keluar" ? System.Drawing.Color.OrangeRed : System.Drawing.Color.LightGray;
+            btn_masuk.BackColor = jenis == "masuk" ? Color.Green : Color.LightGray;
+            btn_keluar.BackColor = jenis == "keluar" ? Color.OrangeRed : Color.LightGray;
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
             try
             {
-                var listKomoditas = new DatabaseHelper().GetAllKomoditas();
-                var listPetani = uc.GetPetaniList();
+                string idKomoditas;
+                int idPetani = 0;
 
-                string idKomoditas = listKomoditas[cb_komoditas.SelectedIndex].id_komoditas;
-                string satuan = cb_satuan.SelectedItem?.ToString();
+                if (_panelAktif == "masuk")
+                {
+                    idKomoditas = _listKomoditasMasuk[cb_komoditas.SelectedIndex].id_komoditas;
+                    idPetani = _listPetaniMasuk[cb_petani.SelectedIndex].idPetani;
+                }
+                else
+                {
+                    if (_listKomoditasKeluar.Count == 0)
+                    {
+                        MessageBox.Show("Tidak ada komoditas yang tersedia untuk stok keluar.",
+                            "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    idKomoditas = _listKomoditasKeluar[cb_komoditas.SelectedIndex].id_komoditas;
+                }
+
+                string satuan = _panelAktif == "masuk"
+                                ? _listKomoditasMasuk[cb_komoditas.SelectedIndex].satuan
+                                : _listKomoditasKeluar[cb_komoditas.SelectedIndex].satuan;
                 decimal jumlah = decimal.Parse(tb_jumlah.Text);
-                int idPetani = _panelAktif == "masuk" ? listPetani[cb_petani.SelectedIndex].idPetani : 0;
 
                 uc.CatatTransaksi(idKomoditas, idPetani, _panelAktif, jumlah, satuan);
 
@@ -122,8 +174,8 @@ namespace Kelompok_2___PBO_Projects_Apps
         private void BersihkanForm()
         {
             tb_jumlah.Text = "";
-            cb_komoditas.SelectedIndex = 0;
-            cb_satuan.SelectedIndex = 0;
+            if (cb_komoditas.Items.Count > 0)
+                cb_komoditas.SelectedIndex = 0;
             if (cb_petani.Items.Count > 0)
                 cb_petani.SelectedIndex = 0;
         }

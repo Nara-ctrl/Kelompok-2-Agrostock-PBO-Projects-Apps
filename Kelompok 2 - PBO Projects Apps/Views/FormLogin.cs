@@ -30,10 +30,10 @@ namespace Kelompok_2___PBO_Projects_Apps
                         FormAdmin admin = new FormAdmin();
                         admin.Show();
                     }
-                    else if (user is Petani)
+                    else if (user is Petani petani)
                     {
-                        FormPetani petani = new FormPetani();
-                        petani.Show();
+                        FormPetani formPetani = new FormPetani(petani.IdPetani);
+                        formPetani.Show();
                     }
                 }
                 else
