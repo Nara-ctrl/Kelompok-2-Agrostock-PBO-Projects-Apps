@@ -47,7 +47,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Controllers
         }
 
         public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
-                              decimal jumlah, string satuan)
+                            decimal jumlah, string satuan)
         {
             if (string.IsNullOrWhiteSpace(idKomoditas))
                 throw new Exception("Komoditas wajib dipilih!");
@@ -67,7 +67,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Controllers
             else
                 transaksi = new StokKeluar(idKomoditas, jumlah, satuan);
 
-            db.CatatTransaksi(transaksi.IdKomoditas, idPetani,
+            int petaniUntukDb = jenis == "masuk" ? idPetani : 0;
+
+            db.CatatTransaksi(transaksi.IdKomoditas, petaniUntukDb,
                               transaksi.GetJenis(), transaksi.Jumlah,
                               transaksi.Satuan);
         }

@@ -77,7 +77,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 "INSERT INTO stok (id_komoditas, jumlah) VALUES (@id, @jumlah)", conn);
             cmdStok.Parameters.AddWithValue("id", k.id_komoditas);
             cmdStok.Parameters.AddWithValue("jumlah", 0);
-            cmdStok.ExecuteNonQuery(); 
+            cmdStok.ExecuteNonQuery();
         }
 
         public void UpdateKomoditas(Komoditas k)
@@ -240,26 +240,20 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
             using var cmd = new NpgsqlCommand(
-                "SELECT jumlah " +
-                "FROM stok " +
-                "WHERE id_komoditas = @id", conn);
+                "SELECT COALESCE(SUM(jumlah), 0) FROM stok WHERE id_komoditas = @id", conn);
             cmd.Parameters.AddWithValue("id", idKomoditas);
             var hasil = cmd.ExecuteScalar();
-
-            if (hasil == null)
-                return 0;
-
-            return Convert.ToDecimal(hasil);
+            return hasil == null ? 0 : Convert.ToDecimal(hasil);
         }
 
         public void CatatTransaksi(string idKomoditas, int idPetani, string jenis,
-                                    decimal jumlah, string satuan)
+                                  decimal jumlah, string satuan)
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
 
             string q1 = @"INSERT INTO transaksi (id_komoditas, id_petani, jenis, jumlah, satuan, tanggal) 
-                        VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal)";
+                VALUES (@id_komoditas, @id_petani, @jenis, @jumlah, @satuan, @tanggal)";
 
             using (var cmd = new NpgsqlCommand(q1, conn))
             {
@@ -389,6 +383,30 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             }
             return list;
         }
+
+        public List<Komoditas> GetKomoditasStokMasuk()
+        {
+            List<Komoditas> list = new List<Komoditas>();
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            using var cmd = new NpgsqlCommand(
+                "SELECT DISTINCT k.id_komoditas, k.nama_komoditas, k.satuan " +
+                "FROM komoditas k " +
+                "JOIN transaksi t ON k.id_komoditas = t.id_komoditas " +
+                "WHERE k.status = true AND t.jenis = 'masuk' " +
+                "ORDER BY k.id_komoditas ASC", conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new Komoditas(
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2)
+                ));
+            }
+            return list;
+        }
+
         public DataTable GetRiwayatTransaksi()
         {
             DataTable dt = new DataTable();
@@ -398,14 +416,45 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 conn.Open();
                 using var cmd = new NpgsqlCommand(
                     @"SELECT ROW_NUMBER() OVER (ORDER BY t.tanggal DESC) AS no,
-                     t.id_komoditas,
-                     k.nama_komoditas,
-                     t.tanggal AS tanggal_transaksi,
-                     CASE WHEN t.jenis = 'keluar' THEN -t.jumlah ELSE t.jumlah END AS jumlah,
-                     k.satuan
-              FROM transaksi t
-              JOIN komoditas k ON t.id_komoditas = k.id_komoditas
-              ORDER BY t.tanggal DESC", conn);
+                    t.id_komoditas,
+                    k.nama_komoditas,
+                    p.nama AS nama_petani,
+                    t.tanggal AS tanggal_transaksi,
+                    CASE WHEN t.jenis = 'keluar' THEN -t.jumlah ELSE t.jumlah END AS jumlah,
+                    k.satuan
+                    FROM transaksi t
+                    JOIN komoditas k ON t.id_komoditas = k.id_komoditas
+                    LEFT JOIN petani p ON t.id_petani = p.id_petani
+                    ORDER BY t.tanggal DESC", conn);
+                using var reader = cmd.ExecuteReader();
+                dt.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable GetRiwayatTransaksiByPetani(int idPetani)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using var conn = new NpgsqlConnection(connString);
+                conn.Open();
+                using var cmd = new NpgsqlCommand(
+                    @"SELECT ROW_NUMBER() OVER (ORDER BY t.tanggal DESC) AS no,
+                    t.id_komoditas,
+                    k.nama_komoditas,
+                    t.tanggal AS tanggal_transaksi,
+                    CASE WHEN t.jenis = 'keluar' THEN -t.jumlah ELSE t.jumlah END AS jumlah,
+                    k.satuan
+                    FROM transaksi t
+                    JOIN komoditas k ON t.id_komoditas = k.id_komoditas
+                    WHERE t.id_petani = @idPetani
+                    ORDER BY t.tanggal DESC", conn);
+                cmd.Parameters.AddWithValue("idPetani", idPetani);
                 using var reader = cmd.ExecuteReader();
                 dt.Load(reader);
             }
