@@ -37,6 +37,8 @@
             // btn_keluar
             // 
             btn_keluar.BackColor = Color.Transparent;
+            btn_keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_keluar.FlatStyle = FlatStyle.Flat;
             btn_keluar.Location = new Point(686, 146);
             btn_keluar.Name = "btn_keluar";

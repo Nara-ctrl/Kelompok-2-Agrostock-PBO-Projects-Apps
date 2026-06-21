@@ -43,18 +43,23 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
                 dgv_R_Transaksi.Columns["no"].HeaderText = "No.";
                 dgv_R_Transaksi.Columns["id_komoditas"].HeaderText = "ID Komoditas";
                 dgv_R_Transaksi.Columns["nama_komoditas"].HeaderText = "Komoditas";
-                dgv_R_Transaksi.Columns["nama_petani"].HeaderText = "Petani";
+
+                if (dgv_R_Transaksi.Columns.Contains("nama_petani"))
+                {
+                    dgv_R_Transaksi.Columns["nama_petani"].HeaderText = "Petani";
+                    dgv_R_Transaksi.Columns["nama_petani"].DefaultCellStyle.NullValue = "-";
+                    dgv_R_Transaksi.Columns["nama_petani"].FillWeight = 18;
+                }
+
                 dgv_R_Transaksi.Columns["tanggal_transaksi"].HeaderText = "Tanggal";
                 dgv_R_Transaksi.Columns["jumlah"].HeaderText = "Jumlah";
                 dgv_R_Transaksi.Columns["satuan"].HeaderText = "Satuan";
 
                 dgv_R_Transaksi.Columns["tanggal_transaksi"].DefaultCellStyle.Format = "dd-MMM-yyyy HH:mm";
-                dgv_R_Transaksi.Columns["nama_petani"].DefaultCellStyle.NullValue = "-";
 
                 dgv_R_Transaksi.Columns["no"].FillWeight = 8;
                 dgv_R_Transaksi.Columns["id_komoditas"].FillWeight = 15;
                 dgv_R_Transaksi.Columns["nama_komoditas"].FillWeight = 18;
-                dgv_R_Transaksi.Columns["nama_petani"].FillWeight = 18;
                 dgv_R_Transaksi.Columns["tanggal_transaksi"].FillWeight = 22;
                 dgv_R_Transaksi.Columns["jumlah"].FillWeight = 12;
                 dgv_R_Transaksi.Columns["satuan"].FillWeight = 10;
