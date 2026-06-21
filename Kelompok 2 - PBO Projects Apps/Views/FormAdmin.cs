@@ -58,15 +58,16 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btn_kelola_petani_Click(object sender, EventArgs e)
         {
-            FormKelolaDataPetani kelolaDataPetani = new FormKelolaDataPetani();
-            kelolaDataPetani.Show();
+            FormKelolaDataAkunPetani form = new FormKelolaDataAkunPetani(_admin);
+            form.Show(); 
             this.Hide();
         }
 
         private void btn_KelolaProfil_Click(object sender, EventArgs e)
         {
-            FormKelolaProfilAdmin formProfil = new FormKelolaProfilAdmin(_admin);
-            formProfil.ShowDialog();
+            FormKelolaProfilAdmin Profil = new FormKelolaProfilAdmin(_admin);
+            Profil.Show();
+            this.Hide();
         }
     }
 }

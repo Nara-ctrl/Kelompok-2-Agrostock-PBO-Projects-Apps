@@ -11,9 +11,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
     {
         private static string connString = 
             "Host=localhost;Port=5432;" +
-            "Database=ProjectPboS2;" +
+            "Database=AgrostockApp;" +
             "Username=postgres;" +
-            "Password=zen123";
+            "Password=admin";
 
 
         public List<Komoditas> GetAllKomoditas()
@@ -494,6 +494,83 @@ GetProfilPetaniByIdPetani(int idPetani)
             return (0, "", "", "", "", "");
         }
 
+        public (string nama, string alamat, string noTlp, string username, string password)
+GetProfilPetaniByIdUser(int idUser)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            string query = @"SELECT p.nama, p.alamat, p.no_tlp, u.username, u.password 
+                     FROM petani p 
+                     JOIN users u ON p.id_user = u.id 
+                     WHERE p.id_user = @id";
+            using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("id", idUser);
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return (reader.GetString(0), reader.GetString(1),
+                        reader.GetString(2), reader.GetString(3), reader.GetString(4));
+            return ("", "", "", "", "");
+        }
+
+        public void UpdateProfilPetani(int userId, string username, string password, string alamat, string noTlp, string nama = "")
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string q1 = @"UPDATE users SET username=@username, password=@password WHERE id=@id";
+            using (var cmd = new NpgsqlCommand(q1, conn))
+            {
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+
+            string q2 = @"UPDATE petani SET alamat=@alamat, no_tlp=@no_tlp, nama=@nama WHERE id_user=@id";
+            using (var cmd = new NpgsqlCommand(q2, conn))
+            {
+                cmd.Parameters.AddWithValue("alamat", alamat);
+                cmd.Parameters.AddWithValue("no_tlp", noTlp);
+                cmd.Parameters.AddWithValue("nama", nama);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public List<(int idUser, string nama, string username)> GetAllPetani()
+        {
+            var list = new List<(int, string, string)>();
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            string query = @"SELECT u.id, p.nama, u.username 
+                     FROM petani p 
+                     JOIN users u ON p.id_user = u.id 
+                     ORDER BY p.nama ASC";
+            using var cmd = new NpgsqlCommand(query, conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+                list.Add((reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+            return list;
+        }
+
+        public void DeletePetani(int idUser)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            string q1 = "DELETE FROM petani WHERE id_user = @id";
+            using (var cmd = new NpgsqlCommand(q1, conn))
+            {
+                cmd.Parameters.AddWithValue("id", idUser);
+                cmd.ExecuteNonQuery();
+            }
+            string q2 = "DELETE FROM users WHERE id = @id";
+            using (var cmd = new NpgsqlCommand(q2, conn))
+            {
+                cmd.Parameters.AddWithValue("id", idUser);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void UpdateProfilAdmin(int userId, string nama, string username, string password, string alamat, string noTlp)
         {
             using var conn = new NpgsqlConnection(connString);
@@ -518,6 +595,5 @@ GetProfilPetaniByIdPetani(int idPetani)
                 cmd.ExecuteNonQuery();
             }
         }
-
     }
 }

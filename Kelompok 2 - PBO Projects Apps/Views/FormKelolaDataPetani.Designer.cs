@@ -39,7 +39,7 @@
             btn_Batal = new Button();
             button4 = new Button();
             btn_Keluar = new Button();
-            textBox1 = new TextBox();
+            tb_username = new TextBox();
             SuspendLayout();
             // 
             // tb_namalengkap
@@ -49,7 +49,6 @@
             tb_namalengkap.Name = "tb_namalengkap";
             tb_namalengkap.Size = new Size(159, 17);
             tb_namalengkap.TabIndex = 0;
-            tb_namalengkap.TextChanged += textBox1_TextChanged;
             // 
             // tb_alamat
             // 
@@ -89,6 +88,7 @@
             btn_Edit.Size = new Size(84, 23);
             btn_Edit.TabIndex = 5;
             btn_Edit.UseVisualStyleBackColor = false;
+            btn_Edit.Click += btn_Edit_Click;
             // 
             // btn_Simpan
             // 
@@ -104,6 +104,7 @@
             btn_Simpan.Size = new Size(84, 23);
             btn_Simpan.TabIndex = 6;
             btn_Simpan.UseVisualStyleBackColor = false;
+            btn_Simpan.Click += btn_Simpan_Click;
             // 
             // button2
             // 
@@ -134,6 +135,7 @@
             btn_Batal.Size = new Size(84, 23);
             btn_Batal.TabIndex = 7;
             btn_Batal.UseVisualStyleBackColor = false;
+            btn_Batal.Click += btn_Batal_Click;
             // 
             // button4
             // 
@@ -164,14 +166,15 @@
             btn_Keluar.Size = new Size(84, 23);
             btn_Keluar.TabIndex = 8;
             btn_Keluar.UseVisualStyleBackColor = false;
+            btn_Keluar.Click += btn_Keluar_Click;
             // 
-            // textBox1
+            // tb_username
             // 
-            textBox1.Location = new Point(370, 224);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 21);
-            textBox1.TabIndex = 9;
+            tb_username.Location = new Point(371, 228);
+            tb_username.Multiline = true;
+            tb_username.Name = "tb_username";
+            tb_username.Size = new Size(157, 17);
+            tb_username.TabIndex = 9;
             // 
             // FormKelolaDataPetani
             // 
@@ -180,7 +183,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(806, 450);
-            Controls.Add(textBox1);
+            Controls.Add(tb_username);
             Controls.Add(btn_Keluar);
             Controls.Add(button4);
             Controls.Add(btn_Batal);
@@ -209,6 +212,6 @@
         private Button btn_Batal;
         private Button button4;
         private Button btn_Keluar;
-        private TextBox textBox1;
+        private TextBox tb_username;
     }
 }
