@@ -4,7 +4,6 @@
     public string nama_komoditas { get; set; }
     public string satuan { get; set; }
 
-    // Constructor lama (tetap ada agar tidak error di tempat lain)
     public Komoditas(string id, string nama, string satuan)
     {
         id_komoditas = id;
@@ -12,7 +11,6 @@
         this.satuan = satuan;
     }
 
-    // ✅ Constructor baru dengan jumlah
     public Komoditas(string id, string nama, decimal jumlah, string satuan)
     {
         id_komoditas = id;
