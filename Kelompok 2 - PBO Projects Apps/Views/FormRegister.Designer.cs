@@ -44,7 +44,7 @@
             // 
             tb_r_password.BorderStyle = BorderStyle.None;
             tb_r_password.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_password.Location = new Point(540, 314);
+            tb_r_password.Location = new Point(540, 381);
             tb_r_password.Margin = new Padding(2);
             tb_r_password.Name = "tb_r_password";
             tb_r_password.Size = new Size(233, 22);
@@ -120,7 +120,7 @@
             // 
             tb_r_username.BorderStyle = BorderStyle.None;
             tb_r_username.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_username.Location = new Point(540, 381);
+            tb_r_username.Location = new Point(540, 314);
             tb_r_username.Margin = new Padding(2);
             tb_r_username.Multiline = true;
             tb_r_username.Name = "tb_r_username";

@@ -44,7 +44,7 @@
             // 
             tb_namaLengkap.BorderStyle = BorderStyle.None;
             tb_namaLengkap.Location = new Point(177, 308);
-            tb_namaLengkap.Margin = new Padding(4, 4, 4, 4);
+            tb_namaLengkap.Margin = new Padding(4);
             tb_namaLengkap.Multiline = true;
             tb_namaLengkap.Name = "tb_namaLengkap";
             tb_namaLengkap.Size = new Size(233, 23);
@@ -54,7 +54,7 @@
             // 
             tb_noTlp.BorderStyle = BorderStyle.None;
             tb_noTlp.Location = new Point(177, 440);
-            tb_noTlp.Margin = new Padding(4, 4, 4, 4);
+            tb_noTlp.Margin = new Padding(4);
             tb_noTlp.Multiline = true;
             tb_noTlp.Name = "tb_noTlp";
             tb_noTlp.Size = new Size(233, 23);
@@ -64,7 +64,7 @@
             // 
             tb_username.BorderStyle = BorderStyle.None;
             tb_username.Location = new Point(539, 314);
-            tb_username.Margin = new Padding(4, 4, 4, 4);
+            tb_username.Margin = new Padding(4);
             tb_username.Multiline = true;
             tb_username.Name = "tb_username";
             tb_username.Size = new Size(233, 23);
@@ -74,7 +74,7 @@
             // 
             tb_password.BorderStyle = BorderStyle.None;
             tb_password.Location = new Point(539, 380);
-            tb_password.Margin = new Padding(4, 4, 4, 4);
+            tb_password.Margin = new Padding(4);
             tb_password.Multiline = true;
             tb_password.Name = "tb_password";
             tb_password.Size = new Size(233, 23);
@@ -148,7 +148,7 @@
             // 
             tb_alamat.BorderStyle = BorderStyle.None;
             tb_alamat.Location = new Point(177, 374);
-            tb_alamat.Margin = new Padding(4, 4, 4, 4);
+            tb_alamat.Margin = new Padding(4);
             tb_alamat.Multiline = true;
             tb_alamat.Name = "tb_alamat";
             tb_alamat.Size = new Size(233, 23);
@@ -170,8 +170,9 @@
             Controls.Add(tb_alamat);
             Controls.Add(tb_noTlp);
             Controls.Add(tb_namaLengkap);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormKelolaProfilAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKelolaProfilAdmin";
             ResumeLayout(false);
             PerformLayout();

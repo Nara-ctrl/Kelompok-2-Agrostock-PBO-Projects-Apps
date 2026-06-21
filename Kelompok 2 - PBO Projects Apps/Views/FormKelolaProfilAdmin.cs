@@ -93,7 +93,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
 
         private void btn_Keluar_Click(object sender, EventArgs e)
         {
-            FormAdmin back = new FormAdmin(null);
+            FormAdmin back = new FormAdmin(adminLogin);
             back.Show();
             this.Hide();
         }
