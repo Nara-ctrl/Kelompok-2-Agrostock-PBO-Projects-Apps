@@ -1,10 +1,7 @@
-﻿using Kelompok_2___PBO_Projects_Apps.Views;
+﻿using Kelompok_2___PBO_Projects_Apps.Database;
+using Kelompok_2___PBO_Projects_Apps.Models;
+using Kelompok_2___PBO_Projects_Apps.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Kelompok_2___PBO_Projects_Apps
@@ -21,9 +18,22 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btn_kelola_profil_Click(object sender, EventArgs e)
         {
+            DatabaseHelper db = new DatabaseHelper();
+            var profil = db.GetProfilPetaniByIdPetani(_idPetani);
 
+            Petani petani = new Petani(
+                profil.userId,
+                _idPetani,
+                profil.username,
+                profil.password,
+                profil.nama,
+                profil.alamat,
+                profil.noTlp
+            );
+
+            FormProfilPetani formProfil = new FormProfilPetani(petani);
+            formProfil.ShowDialog();
         }
-
         private void btn_riwayat_Click(object sender, EventArgs e)
         {
             FormRiwayatTransaksi riwayat = new FormRiwayatTransaksi(_idPetani);

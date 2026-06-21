@@ -1,22 +1,19 @@
 ﻿using Kelompok_2___PBO_Projects_Apps.Database;
+using Kelompok_2___PBO_Projects_Apps.Models;
 using Kelompok_2___PBO_Projects_Apps.Views;
-using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Kelompok_2___PBO_Projects_Apps
 {
     public partial class FormAdmin : Form
     {
-        public FormAdmin()
+        private AdminGudang _admin;
+
+        public FormAdmin(AdminGudang admin)
         {
             InitializeComponent();
+            _admin = admin;
         }
 
         private void btn_register_Click(object sender, EventArgs e)
@@ -57,6 +54,19 @@ namespace Kelompok_2___PBO_Projects_Apps
             FormRiwayatTransaksi transaksi = new FormRiwayatTransaksi();
             transaksi.Show();
             this.Hide();
+        }
+
+        private void btn_kelola_petani_Click(object sender, EventArgs e)
+        {
+            FormKelolaDataPetani kelolaDataPetani = new FormKelolaDataPetani();
+            kelolaDataPetani.Show();
+            this.Hide();
+        }
+
+        private void btn_KelolaProfil_Click(object sender, EventArgs e)
+        {
+            FormKelolaProfilAdmin formProfil = new FormKelolaProfilAdmin(_admin);
+            formProfil.ShowDialog();
         }
     }
 }

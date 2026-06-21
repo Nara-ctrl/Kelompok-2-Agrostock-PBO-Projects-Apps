@@ -108,7 +108,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
             }
             else
             {
-                FormAdmin admin = new FormAdmin();
+                FormAdmin admin = new FormAdmin(null);
                 admin.ShowDialog();
             }
             this.Close();

@@ -25,10 +25,10 @@ namespace Kelompok_2___PBO_Projects_Apps
                 if (user != null && user.Validasi())
                 {
                     this.Hide();
-                    if (user is AdminGudang)
+                    if (user is AdminGudang admin)
                     {
-                        FormAdmin admin = new FormAdmin();
-                        admin.Show();
+                        FormAdmin formAdmin = new FormAdmin(admin);
+                        formAdmin.Show();
                     }
                     else if (user is Petani petani)
                     {

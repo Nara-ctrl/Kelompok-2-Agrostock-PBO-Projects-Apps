@@ -464,5 +464,59 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             }
             return dt;
         }
+        public (int userId, string nama, string alamat, string noTlp, string username, string password)
+GetProfilPetaniByIdPetani(int idPetani)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string query = @"SELECT u.id, p.nama, p.alamat, p.no_tlp, u.username, u.password 
+                     FROM petani p 
+                     JOIN users u ON p.id_user = u.id 
+                     WHERE p.id_petani = @idPetani";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("idPetani", idPetani);
+            using var reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return (
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5)
+                );
+            }
+            return (0, "", "", "", "", "");
+        }
+
+        public void UpdateProfilAdmin(int userId, string nama, string username, string password, string alamat, string noTlp)
+        {
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+
+            string q1 = @"UPDATE users SET username=@username, password=@password WHERE id=@id";
+            using (var cmd = new NpgsqlCommand(q1, conn))
+            {
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+
+            string q2 = @"UPDATE admin SET nama=@nama, alamat=@alamat, no_tlp=@no_tlp WHERE id_user=@id";
+            using (var cmd = new NpgsqlCommand(q2, conn))
+            {
+                cmd.Parameters.AddWithValue("nama", nama);
+                cmd.Parameters.AddWithValue("alamat", alamat);
+                cmd.Parameters.AddWithValue("no_tlp", noTlp);
+                cmd.Parameters.AddWithValue("id", userId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

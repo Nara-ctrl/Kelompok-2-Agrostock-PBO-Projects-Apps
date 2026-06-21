@@ -39,5 +39,10 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
 
         }
+
+        private void tb_r_alamat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
