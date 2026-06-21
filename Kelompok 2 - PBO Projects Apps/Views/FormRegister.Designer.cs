@@ -43,19 +43,19 @@
             // 
             tb_r_password.BorderStyle = BorderStyle.None;
             tb_r_password.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_password.Location = new Point(447, 249);
+            tb_r_password.Location = new Point(559, 311);
             tb_r_password.Margin = new Padding(2);
             tb_r_password.Name = "tb_r_password";
-            tb_r_password.Size = new Size(180, 18);
+            tb_r_password.Size = new Size(225, 22);
             tb_r_password.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 77);
+            label1.Location = new Point(282, 96);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 25);
             label1.TabIndex = 2;
             // 
             // imageList1
@@ -74,10 +74,10 @@
             btn_register.FlatStyle = FlatStyle.Flat;
             btn_register.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_register.ForeColor = Color.Honeydew;
-            btn_register.Location = new Point(447, 289);
+            btn_register.Location = new Point(559, 361);
             btn_register.Margin = new Padding(2);
             btn_register.Name = "btn_register";
-            btn_register.Size = new Size(180, 23);
+            btn_register.Size = new Size(225, 29);
             btn_register.TabIndex = 5;
             btn_register.UseVisualStyleBackColor = false;
             btn_register.Click += btn_register_Click;
@@ -86,53 +86,53 @@
             // 
             tb_r_nama.BorderStyle = BorderStyle.None;
             tb_r_nama.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_nama.Location = new Point(147, 252);
+            tb_r_nama.Location = new Point(184, 315);
             tb_r_nama.Margin = new Padding(2);
             tb_r_nama.Multiline = true;
             tb_r_nama.Name = "tb_r_nama";
-            tb_r_nama.Size = new Size(194, 19);
+            tb_r_nama.Size = new Size(242, 24);
             tb_r_nama.TabIndex = 8;
             // 
             // tb_r_alamat
             // 
             tb_r_alamat.BorderStyle = BorderStyle.None;
             tb_r_alamat.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_alamat.Location = new Point(147, 306);
+            tb_r_alamat.Location = new Point(184, 382);
             tb_r_alamat.Margin = new Padding(2);
             tb_r_alamat.Multiline = true;
             tb_r_alamat.Name = "tb_r_alamat";
-            tb_r_alamat.Size = new Size(194, 19);
+            tb_r_alamat.Size = new Size(242, 24);
             tb_r_alamat.TabIndex = 9;
             // 
             // tb_r_notlp
             // 
             tb_r_notlp.BorderStyle = BorderStyle.None;
             tb_r_notlp.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_notlp.Location = new Point(147, 360);
+            tb_r_notlp.Location = new Point(184, 450);
             tb_r_notlp.Margin = new Padding(2);
             tb_r_notlp.Multiline = true;
             tb_r_notlp.Name = "tb_r_notlp";
-            tb_r_notlp.Size = new Size(194, 19);
+            tb_r_notlp.Size = new Size(242, 24);
             tb_r_notlp.TabIndex = 10;
             // 
             // tb_r_username
             // 
             tb_r_username.BorderStyle = BorderStyle.None;
             tb_r_username.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_username.Location = new Point(392, 244);
+            tb_r_username.Location = new Point(518, 382);
             tb_r_username.Margin = new Padding(2);
             tb_r_username.Multiline = true;
             tb_r_username.Name = "tb_r_username";
-            tb_r_username.Size = new Size(194, 19);
+            tb_r_username.Size = new Size(242, 24);
             tb_r_username.TabIndex = 11;
             // 
             // FormRegister
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_register_petani__admin_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(978, 506);
+            ClientSize = new Size(1222, 632);
             Controls.Add(tb_r_username);
             Controls.Add(tb_r_notlp);
             Controls.Add(tb_r_alamat);
