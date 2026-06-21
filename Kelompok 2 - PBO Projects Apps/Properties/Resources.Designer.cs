@@ -83,9 +83,29 @@ namespace Kelompok_2___PBO_Projects_Apps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_catat_transaksi__admin_1 {
+            get {
+                object obj = ResourceManager.GetObject("bg_catat_transaksi_(admin)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_kelola_data__admin_ {
             get {
                 object obj = ResourceManager.GetObject("bg_kelola_data_(admin)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_kelola_komoditas__admin_ {
+            get {
+                object obj = ResourceManager.GetObject("bg_kelola_komoditas_(admin)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

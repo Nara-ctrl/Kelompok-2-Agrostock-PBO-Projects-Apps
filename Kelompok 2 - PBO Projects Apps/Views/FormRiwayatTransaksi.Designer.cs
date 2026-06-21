@@ -66,11 +66,12 @@
             // dgv_R_Transaksi
             // 
             dgv_R_Transaksi.BackgroundColor = Color.White;
+            dgv_R_Transaksi.BorderStyle = BorderStyle.None;
             dgv_R_Transaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_R_Transaksi.Location = new Point(167, 212);
+            dgv_R_Transaksi.Location = new Point(197, 263);
             dgv_R_Transaksi.Name = "dgv_R_Transaksi";
             dgv_R_Transaksi.RowHeadersWidth = 51;
-            dgv_R_Transaksi.Size = new Size(646, 191);
+            dgv_R_Transaksi.Size = new Size(784, 234);
             dgv_R_Transaksi.TabIndex = 2;
             dgv_R_Transaksi.CellContentClick += dgv_R_Transaksi_CellContentClick;
             // 
@@ -82,10 +83,10 @@
             btn_R_keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_R_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_R_keluar.FlatStyle = FlatStyle.Flat;
-            btn_R_keluar.Location = new Point(708, 146);
+            btn_R_keluar.Location = new Point(853, 177);
             btn_R_keluar.Margin = new Padding(2);
             btn_R_keluar.Name = "btn_R_keluar";
-            btn_R_keluar.Size = new Size(105, 22);
+            btn_R_keluar.Size = new Size(128, 30);
             btn_R_keluar.TabIndex = 3;
             btn_R_keluar.UseVisualStyleBackColor = false;
             btn_R_keluar.Click += btn_R_keluar_Click;
@@ -95,7 +96,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             CausesValidation = false;
-            ClientSize = new Size(978, 506);
+            ClientSize = new Size(1178, 619);
             ControlBox = false;
             Controls.Add(btn_R_keluar);
             Controls.Add(dgv_R_Transaksi);

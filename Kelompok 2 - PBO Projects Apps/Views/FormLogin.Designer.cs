@@ -32,17 +32,19 @@
             tb_username = new TextBox();
             L_username = new Label();
             l_password = new Label();
-            tb_password = new TextBox();
             btn_login = new Button();
+            tb_password = new TextBox();
             SuspendLayout();
             // 
             // tb_username
             // 
             tb_username.BorderStyle = BorderStyle.None;
-            tb_username.Location = new Point(582, 225);
-            tb_username.Margin = new Padding(2);
+            tb_username.Font = new Font("Segoe UI", 12F);
+            tb_username.Location = new Point(491, 163);
+            tb_username.Margin = new Padding(1);
+            tb_username.Multiline = true;
             tb_username.Name = "tb_username";
-            tb_username.Size = new Size(278, 24);
+            tb_username.Size = new Size(237, 21);
             tb_username.TabIndex = 0;
             // 
             // L_username
@@ -51,10 +53,10 @@
             L_username.BackColor = Color.Transparent;
             L_username.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             L_username.ForeColor = Color.OliveDrab;
-            L_username.Location = new Point(552, 181);
-            L_username.Margin = new Padding(2, 0, 2, 0);
+            L_username.Location = new Point(386, 109);
+            L_username.Margin = new Padding(1, 0, 1, 0);
             L_username.Name = "L_username";
-            L_username.Size = new Size(0, 25);
+            L_username.Size = new Size(0, 15);
             L_username.TabIndex = 1;
             // 
             // l_password
@@ -63,20 +65,11 @@
             l_password.BackColor = Color.Transparent;
             l_password.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             l_password.ForeColor = Color.OliveDrab;
-            l_password.Location = new Point(552, 258);
-            l_password.Margin = new Padding(2, 0, 2, 0);
+            l_password.Location = new Point(386, 155);
+            l_password.Margin = new Padding(1, 0, 1, 0);
             l_password.Name = "l_password";
-            l_password.Size = new Size(0, 25);
+            l_password.Size = new Size(0, 15);
             l_password.TabIndex = 2;
-            // 
-            // tb_password
-            // 
-            tb_password.BorderStyle = BorderStyle.None;
-            tb_password.Location = new Point(582, 306);
-            tb_password.Margin = new Padding(2);
-            tb_password.Name = "tb_password";
-            tb_password.Size = new Size(278, 24);
-            tb_password.TabIndex = 3;
             // 
             // btn_login
             // 
@@ -90,33 +83,45 @@
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_login.ForeColor = Color.Transparent;
-            btn_login.Location = new Point(582, 376);
-            btn_login.Margin = new Padding(2);
+            btn_login.Location = new Point(489, 275);
+            btn_login.Margin = new Padding(1);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(278, 34);
+            btn_login.Size = new Size(239, 27);
             btn_login.TabIndex = 4;
             btn_login.UseVisualStyleBackColor = false;
             btn_login.Click += btn_login_Click;
             // 
+            // tb_password
+            // 
+            tb_password.BorderStyle = BorderStyle.None;
+            tb_password.Font = new Font("Segoe UI", 12F);
+            tb_password.Location = new Point(491, 223);
+            tb_password.Margin = new Padding(1);
+            tb_password.Name = "tb_password";
+            tb_password.Size = new Size(237, 22);
+            tb_password.TabIndex = 5;
+            tb_password.UseSystemPasswordChar = true;
+            // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_login;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(978, 506);
-            Controls.Add(btn_login);
+            ClientSize = new Size(825, 371);
             Controls.Add(tb_password);
+            Controls.Add(btn_login);
             Controls.Add(l_password);
             Controls.Add(L_username);
             Controls.Add(tb_username);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2);
+            Margin = new Padding(1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,7 +131,7 @@
         private TextBox tb_username;
         private Label L_username;
         private Label l_password;
-        private TextBox tb_password;
         private Button btn_login;
+        private TextBox tb_password;
     }
 }
