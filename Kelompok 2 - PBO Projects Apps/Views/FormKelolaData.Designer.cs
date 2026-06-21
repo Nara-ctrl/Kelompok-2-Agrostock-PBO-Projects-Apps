@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKelolaData));
             btn_transaksi = new Button();
             button1 = new Button();
             btnLihatStok = new Button();
@@ -84,7 +83,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg_kelola_data__admin_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
             ControlBox = false;

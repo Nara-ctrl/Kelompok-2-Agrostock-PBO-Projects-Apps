@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             btn_olah_komoditas = new Button();
             btn_logout = new Button();
             btn_kelola_data = new Button();
@@ -153,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg_admin;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(782, 405);
             ControlBox = false;

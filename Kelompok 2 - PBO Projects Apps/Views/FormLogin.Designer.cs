@@ -39,10 +39,10 @@
             // tb_username
             // 
             tb_username.BorderStyle = BorderStyle.None;
-            tb_username.Location = new Point(466, 180);
+            tb_username.Location = new Point(582, 225);
             tb_username.Margin = new Padding(2);
             tb_username.Name = "tb_username";
-            tb_username.Size = new Size(222, 20);
+            tb_username.Size = new Size(278, 24);
             tb_username.TabIndex = 0;
             // 
             // L_username
@@ -51,10 +51,10 @@
             L_username.BackColor = Color.Transparent;
             L_username.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             L_username.ForeColor = Color.OliveDrab;
-            L_username.Location = new Point(442, 145);
+            L_username.Location = new Point(552, 181);
             L_username.Margin = new Padding(2, 0, 2, 0);
             L_username.Name = "L_username";
-            L_username.Size = new Size(0, 20);
+            L_username.Size = new Size(0, 25);
             L_username.TabIndex = 1;
             // 
             // l_password
@@ -63,19 +63,19 @@
             l_password.BackColor = Color.Transparent;
             l_password.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             l_password.ForeColor = Color.OliveDrab;
-            l_password.Location = new Point(442, 206);
+            l_password.Location = new Point(552, 258);
             l_password.Margin = new Padding(2, 0, 2, 0);
             l_password.Name = "l_password";
-            l_password.Size = new Size(0, 20);
+            l_password.Size = new Size(0, 25);
             l_password.TabIndex = 2;
             // 
             // tb_password
             // 
             tb_password.BorderStyle = BorderStyle.None;
-            tb_password.Location = new Point(466, 245);
+            tb_password.Location = new Point(582, 306);
             tb_password.Margin = new Padding(2);
             tb_password.Name = "tb_password";
-            tb_password.Size = new Size(222, 20);
+            tb_password.Size = new Size(278, 24);
             tb_password.TabIndex = 3;
             // 
             // btn_login
@@ -90,21 +90,21 @@
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_login.ForeColor = Color.Transparent;
-            btn_login.Location = new Point(466, 301);
+            btn_login.Location = new Point(582, 376);
             btn_login.Margin = new Padding(2);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(222, 27);
+            btn_login.Size = new Size(278, 34);
             btn_login.TabIndex = 4;
             btn_login.UseVisualStyleBackColor = false;
             btn_login.Click += btn_login_Click;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg_login;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(782, 405);
+            ClientSize = new Size(978, 506);
             Controls.Add(btn_login);
             Controls.Add(tb_password);
             Controls.Add(l_password);

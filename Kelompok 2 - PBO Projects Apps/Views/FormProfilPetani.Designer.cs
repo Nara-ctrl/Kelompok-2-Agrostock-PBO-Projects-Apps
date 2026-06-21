@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfilPetani));
-            tb_namaLengkap = new TextBox();
-            tb_alamat = new TextBox();
-            tb_NoTlp = new TextBox();
-            tb_password = new TextBox();
-            tb_username = new TextBox();
-            btn_Edit = new Button();
-            btn_Simpan = new Button();
-            btn_Batal = new Button();
-            btn_Keluar = new Button();
             SuspendLayout();
             // 
             // tb_namaLengkap
