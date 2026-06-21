@@ -37,6 +37,7 @@
             // dgv_petani
             // 
             dgv_petani.BackgroundColor = Color.White;
+            dgv_petani.BorderStyle = BorderStyle.None;
             dgv_petani.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_petani.Location = new Point(204, 268);
             dgv_petani.Margin = new Padding(4);

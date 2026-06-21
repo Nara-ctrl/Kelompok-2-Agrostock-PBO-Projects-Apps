@@ -557,12 +557,34 @@ GetProfilPetaniByIdUser(int idUser)
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
+
+            int idPetani;
+            string qGetId = "SELECT id_petani FROM petani WHERE id_user = @id";
+            using (var cmd = new NpgsqlCommand(qGetId, conn))
+            {
+                cmd.Parameters.AddWithValue("id", idUser);
+                var result = cmd.ExecuteScalar();
+                if (result == null)
+                {
+                    return; 
+                }
+                idPetani = (int)result;
+            }
+
+            string qTransaksi = "DELETE FROM transaksi WHERE id_petani = @idPetani";
+            using (var cmd = new NpgsqlCommand(qTransaksi, conn))
+            {
+                cmd.Parameters.AddWithValue("idPetani", idPetani);
+                cmd.ExecuteNonQuery();
+            }
+
             string q1 = "DELETE FROM petani WHERE id_user = @id";
             using (var cmd = new NpgsqlCommand(q1, conn))
             {
                 cmd.Parameters.AddWithValue("id", idUser);
                 cmd.ExecuteNonQuery();
             }
+
             string q2 = "DELETE FROM users WHERE id = @id";
             using (var cmd = new NpgsqlCommand(q2, conn))
             {

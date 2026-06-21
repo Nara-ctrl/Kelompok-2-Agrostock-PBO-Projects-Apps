@@ -27,7 +27,6 @@ namespace Kelompok_2___PBO_Projects_Apps
                 uc.RegisterPetani(tb_r_username.Text, tb_r_password.Text, tb_r_nama.Text, tb_r_alamat.Text, tb_r_notlp.Text);
 
                 MessageBox.Show("Akun petani berhasil dibuat!");
-                this.Hide();
             }
             catch (Exception ex)
             {
