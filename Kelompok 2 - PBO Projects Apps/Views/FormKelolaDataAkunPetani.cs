@@ -82,8 +82,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
             if (e.ColumnIndex == dgv_petani.Columns["Edit"].Index)
             {
                 FormKelolaDataPetani formEdit = new FormKelolaDataPetani(idUser);
-                formEdit.ShowDialog();
+                formEdit.Show();
                 LoadData();
+                this.Hide();
             }
 
             if (e.ColumnIndex == dgv_petani.Columns["Hapus"].Index)
@@ -111,7 +112,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
         {
             FormAdmin formAdmin = new FormAdmin(_admin);
             formAdmin.Show();
-            this.Close();
+            this.Hide();
         }
 
         private AdminGudang _admin;
@@ -123,5 +124,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
             SetupGrid();
             LoadData();
         }
+
     }
 }

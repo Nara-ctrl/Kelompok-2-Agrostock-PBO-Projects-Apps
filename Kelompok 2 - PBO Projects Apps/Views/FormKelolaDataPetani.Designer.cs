@@ -35,28 +35,28 @@
             tb_password = new TextBox();
             button2 = new Button();
             button4 = new Button();
-            btn_Keluar = new Button();
-            button1 = new Button();
-            button3 = new Button();
-            button5 = new Button();
+            btn_keluar = new Button();
+            btn_batal = new Button();
+            btn_simpan = new Button();
+            btn_edit = new Button();
+            tb_username = new TextBox();
             SuspendLayout();
             // 
             // tb_nama_lengkap
             // 
             tb_nama_lengkap.BorderStyle = BorderStyle.None;
             tb_nama_lengkap.Location = new Point(177, 308);
-            tb_nama_lengkap.Margin = new Padding(4, 4, 4, 4);
+            tb_nama_lengkap.Margin = new Padding(4);
             tb_nama_lengkap.Multiline = true;
             tb_nama_lengkap.Name = "tb_nama_lengkap";
             tb_nama_lengkap.Size = new Size(233, 23);
             tb_nama_lengkap.TabIndex = 0;
-            tb_nama_lengkap.TextChanged += textBox1_TextChanged;
             // 
             // tb_alamat
             // 
             tb_alamat.BorderStyle = BorderStyle.None;
             tb_alamat.Location = new Point(177, 374);
-            tb_alamat.Margin = new Padding(4, 4, 4, 4);
+            tb_alamat.Margin = new Padding(4);
             tb_alamat.Multiline = true;
             tb_alamat.Name = "tb_alamat";
             tb_alamat.Size = new Size(233, 23);
@@ -66,27 +66,17 @@
             // 
             tb_noTlp.BorderStyle = BorderStyle.None;
             tb_noTlp.Location = new Point(177, 440);
-            tb_noTlp.Margin = new Padding(4, 4, 4, 4);
+            tb_noTlp.Margin = new Padding(4);
             tb_noTlp.Multiline = true;
             tb_noTlp.Name = "tb_noTlp";
             tb_noTlp.Size = new Size(233, 23);
             tb_noTlp.TabIndex = 2;
             // 
-            // tb_username
-            // 
-            tb_username.BorderStyle = BorderStyle.None;
-            tb_username.Location = new Point(540, 315);
-            tb_username.Margin = new Padding(4, 4, 4, 4);
-            tb_username.Multiline = true;
-            tb_username.Name = "tb_username";
-            tb_username.Size = new Size(232, 23);
-            tb_username.TabIndex = 3;
-            // 
             // tb_password
             // 
             tb_password.BorderStyle = BorderStyle.None;
             tb_password.Location = new Point(540, 380);
-            tb_password.Margin = new Padding(4, 4, 4, 4);
+            tb_password.Margin = new Padding(4);
             tb_password.Multiline = true;
             tb_password.Name = "tb_password";
             tb_password.Size = new Size(232, 23);
@@ -123,66 +113,79 @@
             button4.TabIndex = 8;
             button4.UseVisualStyleBackColor = false;
             // 
-            // btn_Keluar
+            // btn_keluar
             // 
-            btn_Keluar.BackColor = Color.Transparent;
-            btn_Keluar.Cursor = Cursors.Hand;
-            btn_Keluar.FlatAppearance.BorderSize = 0;
-            btn_Keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btn_Keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btn_Keluar.FlatStyle = FlatStyle.Flat;
-            btn_Keluar.Location = new Point(887, 374);
-            btn_Keluar.Margin = new Padding(2);
-            btn_Keluar.Name = "btn_Keluar";
-            btn_Keluar.Size = new Size(128, 30);
-            btn_Keluar.TabIndex = 8;
-            btn_Keluar.UseVisualStyleBackColor = false;
-            btn_Keluar.Click += btn_Keluar_Click;
+            btn_keluar.BackColor = Color.Transparent;
+            btn_keluar.Cursor = Cursors.Hand;
+            btn_keluar.FlatAppearance.BorderSize = 0;
+            btn_keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_keluar.FlatStyle = FlatStyle.Flat;
+            btn_keluar.Location = new Point(887, 374);
+            btn_keluar.Margin = new Padding(2);
+            btn_keluar.Name = "btn_keluar";
+            btn_keluar.Size = new Size(128, 30);
+            btn_keluar.TabIndex = 8;
+            btn_keluar.UseVisualStyleBackColor = false;
+            btn_keluar.Click += btn_keluar_Click;
             // 
-            // button1
+            // btn_batal
             // 
-            button1.BackColor = Color.Transparent;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(887, 328);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(128, 30);
-            button1.TabIndex = 9;
-            button1.UseVisualStyleBackColor = false;
+            btn_batal.BackColor = Color.Transparent;
+            btn_batal.Cursor = Cursors.Hand;
+            btn_batal.FlatAppearance.BorderSize = 0;
+            btn_batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_batal.FlatStyle = FlatStyle.Flat;
+            btn_batal.Location = new Point(887, 328);
+            btn_batal.Margin = new Padding(2);
+            btn_batal.Name = "btn_batal";
+            btn_batal.Size = new Size(128, 30);
+            btn_batal.TabIndex = 9;
+            btn_batal.UseVisualStyleBackColor = false;
+            btn_batal.Click += btn_batal_Click;
             // 
-            // button3
+            // btn_simpan
             // 
-            button3.BackColor = Color.Transparent;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(887, 282);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(128, 30);
-            button3.TabIndex = 10;
-            button3.UseVisualStyleBackColor = false;
+            btn_simpan.BackColor = Color.Transparent;
+            btn_simpan.Cursor = Cursors.Hand;
+            btn_simpan.FlatAppearance.BorderSize = 0;
+            btn_simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_simpan.FlatStyle = FlatStyle.Flat;
+            btn_simpan.Location = new Point(887, 282);
+            btn_simpan.Margin = new Padding(2);
+            btn_simpan.Name = "btn_simpan";
+            btn_simpan.Size = new Size(128, 30);
+            btn_simpan.TabIndex = 10;
+            btn_simpan.UseVisualStyleBackColor = false;
+            btn_simpan.Click += btn_simpan_Click;
             // 
-            // button5
+            // btn_edit
             // 
-            button5.BackColor = Color.Transparent;
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button5.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(887, 237);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(128, 30);
-            button5.TabIndex = 11;
-            button5.UseVisualStyleBackColor = false;
+            btn_edit.BackColor = Color.Transparent;
+            btn_edit.Cursor = Cursors.Hand;
+            btn_edit.FlatAppearance.BorderSize = 0;
+            btn_edit.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_edit.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_edit.FlatStyle = FlatStyle.Flat;
+            btn_edit.Location = new Point(887, 237);
+            btn_edit.Margin = new Padding(2);
+            btn_edit.Name = "btn_edit";
+            btn_edit.Size = new Size(128, 30);
+            btn_edit.TabIndex = 11;
+            btn_edit.UseVisualStyleBackColor = false;
+            btn_edit.Click += btn_edit_Click;
+            // 
+            // tb_username
+            // 
+            tb_username.BorderStyle = BorderStyle.None;
+            tb_username.Location = new Point(540, 313);
+            tb_username.Margin = new Padding(4);
+            tb_username.Multiline = true;
+            tb_username.Name = "tb_username";
+            tb_username.Size = new Size(232, 23);
+            tb_username.TabIndex = 12;
             // 
             // FormKelolaDataPetani
             // 
@@ -191,18 +194,20 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1178, 619);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(btn_Keluar);
+            Controls.Add(tb_username);
+            Controls.Add(btn_edit);
+            Controls.Add(btn_simpan);
+            Controls.Add(btn_batal);
+            Controls.Add(btn_keluar);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(tb_password);
             Controls.Add(tb_noTlp);
             Controls.Add(tb_alamat);
             Controls.Add(tb_nama_lengkap);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormKelolaDataPetani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKelolaDataPetani";
             ResumeLayout(false);
             PerformLayout();
@@ -216,9 +221,10 @@
         private TextBox tb_password;
         private Button button2;
         private Button button4;
-        private Button btn_Keluar;
-        private Button button1;
-        private Button button3;
-        private Button button5;
+        private Button btn_keluar;
+        private Button btn_batal;
+        private Button btn_simpan;
+        private Button btn_edit;
+        private TextBox tb_username;
     }
 }

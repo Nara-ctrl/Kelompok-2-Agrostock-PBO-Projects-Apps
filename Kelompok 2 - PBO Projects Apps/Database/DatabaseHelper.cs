@@ -11,9 +11,9 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
     {
         private static string connString = 
             "Host=localhost;Port=5432;" +
-            "Database=AgrostockApp;" +
+            "Database=ProjectPboS2;" +
             "Username=postgres;" +
-            "Password=admin";
+            "Password=zen123";
 
 
         public List<Komoditas> GetAllKomoditas()
