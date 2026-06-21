@@ -32,7 +32,6 @@
             tb_namalengkap = new TextBox();
             tb_alamat = new TextBox();
             tb_noTlp = new TextBox();
-            tb_username = new TextBox();
             tb_password = new TextBox();
             btn_Edit = new Button();
             btn_Simpan = new Button();
@@ -40,6 +39,7 @@
             btn_Batal = new Button();
             button4 = new Button();
             btn_Keluar = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // tb_namalengkap
@@ -66,14 +66,6 @@
             tb_noTlp.Name = "tb_noTlp";
             tb_noTlp.Size = new Size(159, 17);
             tb_noTlp.TabIndex = 2;
-            // 
-            // tb_username
-            // 
-            tb_username.Location = new Point(370, 228);
-            tb_username.Multiline = true;
-            tb_username.Name = "tb_username";
-            tb_username.Size = new Size(159, 17);
-            tb_username.TabIndex = 3;
             // 
             // tb_password
             // 
@@ -173,6 +165,14 @@
             btn_Keluar.TabIndex = 8;
             btn_Keluar.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(370, 224);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(156, 21);
+            textBox1.TabIndex = 9;
+            // 
             // FormKelolaDataPetani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -180,6 +180,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(806, 450);
+            Controls.Add(textBox1);
             Controls.Add(btn_Keluar);
             Controls.Add(button4);
             Controls.Add(btn_Batal);
@@ -187,7 +188,6 @@
             Controls.Add(btn_Simpan);
             Controls.Add(btn_Edit);
             Controls.Add(tb_password);
-            Controls.Add(tb_username);
             Controls.Add(tb_noTlp);
             Controls.Add(tb_alamat);
             Controls.Add(tb_namalengkap);
@@ -202,7 +202,6 @@
         private TextBox tb_namalengkap;
         private TextBox tb_alamat;
         private TextBox tb_noTlp;
-        private TextBox tb_username;
         private TextBox tb_password;
         private Button btn_Edit;
         private Button btn_Simpan;
@@ -210,5 +209,6 @@
         private Button btn_Batal;
         private Button button4;
         private Button btn_Keluar;
+        private TextBox textBox1;
     }
 }
