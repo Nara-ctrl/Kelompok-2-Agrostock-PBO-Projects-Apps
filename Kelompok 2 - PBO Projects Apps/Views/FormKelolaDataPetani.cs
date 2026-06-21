@@ -19,5 +19,15 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
         {
 
         }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Keluar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

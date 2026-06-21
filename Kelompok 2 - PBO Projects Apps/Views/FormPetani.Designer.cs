@@ -42,10 +42,10 @@
             btn_kelola_profil.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_kelola_profil.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_kelola_profil.FlatStyle = FlatStyle.Flat;
-            btn_kelola_profil.Location = new Point(163, 193);
+            btn_kelola_profil.Location = new Point(198, 236);
             btn_kelola_profil.Margin = new Padding(2);
             btn_kelola_profil.Name = "btn_kelola_profil";
-            btn_kelola_profil.Size = new Size(124, 102);
+            btn_kelola_profil.Size = new Size(147, 126);
             btn_kelola_profil.TabIndex = 1;
             btn_kelola_profil.UseVisualStyleBackColor = false;
             btn_kelola_profil.Click += btn_kelola_profil_Click;
@@ -58,10 +58,10 @@
             btn_logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_logout.FlatStyle = FlatStyle.Flat;
-            btn_logout.Location = new Point(515, 193);
+            btn_logout.Location = new Point(621, 236);
             btn_logout.Margin = new Padding(2);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(124, 102);
+            btn_logout.Size = new Size(147, 126);
             btn_logout.TabIndex = 2;
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
@@ -74,10 +74,10 @@
             btn_riwayat.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_riwayat.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_riwayat.FlatStyle = FlatStyle.Flat;
-            btn_riwayat.Location = new Point(339, 193);
+            btn_riwayat.Location = new Point(409, 236);
             btn_riwayat.Margin = new Padding(2);
             btn_riwayat.Name = "btn_riwayat";
-            btn_riwayat.Size = new Size(124, 102);
+            btn_riwayat.Size = new Size(147, 126);
             btn_riwayat.TabIndex = 4;
             btn_riwayat.UseVisualStyleBackColor = false;
             btn_riwayat.Click += btn_riwayat_Click;
@@ -88,7 +88,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(978, 506);
+            ClientSize = new Size(1178, 619);
             ControlBox = false;
             Controls.Add(btn_riwayat);
             Controls.Add(btn_logout);

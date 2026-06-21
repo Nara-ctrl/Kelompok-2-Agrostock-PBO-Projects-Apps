@@ -41,9 +41,9 @@
             btn_transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_transaksi.FlatStyle = FlatStyle.Flat;
-            btn_transaksi.Location = new Point(336, 202);
+            btn_transaksi.Location = new Point(407, 246);
             btn_transaksi.Name = "btn_transaksi";
-            btn_transaksi.Size = new Size(124, 102);
+            btn_transaksi.Size = new Size(147, 126);
             btn_transaksi.TabIndex = 5;
             btn_transaksi.UseVisualStyleBackColor = false;
             btn_transaksi.Click += btn_transaksi_Click;
@@ -56,9 +56,9 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(509, 202);
+            button1.Location = new Point(614, 246);
             button1.Name = "button1";
-            button1.Size = new Size(124, 102);
+            button1.Size = new Size(147, 126);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -72,9 +72,9 @@
             btnLihatStok.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnLihatStok.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLihatStok.FlatStyle = FlatStyle.Flat;
-            btnLihatStok.Location = new Point(166, 202);
+            btnLihatStok.Location = new Point(199, 246);
             btnLihatStok.Name = "btnLihatStok";
-            btnLihatStok.Size = new Size(120, 102);
+            btnLihatStok.Size = new Size(147, 126);
             btnLihatStok.TabIndex = 7;
             btnLihatStok.UseVisualStyleBackColor = false;
             btnLihatStok.Click += btnLihatStok_Click;
@@ -85,7 +85,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_kelola_data__admin_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(978, 506);
+            ClientSize = new Size(1178, 619);
             ControlBox = false;
             Controls.Add(btnLihatStok);
             Controls.Add(button1);

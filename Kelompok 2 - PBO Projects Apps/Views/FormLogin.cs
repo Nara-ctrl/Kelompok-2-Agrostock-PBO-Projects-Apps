@@ -11,7 +11,6 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
             InitializeComponent();
 
-            tb_password.UseSystemPasswordChar = true;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -51,6 +50,11 @@ namespace Kelompok_2___PBO_Projects_Apps
         {
             base.OnFormClosing(e);
             Application.Exit();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -66,7 +66,8 @@ namespace Kelompok_2___PBO_Projects_Apps
         private void btn_KelolaProfil_Click(object sender, EventArgs e)
         {
             FormKelolaProfilAdmin formProfil = new FormKelolaProfilAdmin(_admin);
-            formProfil.ShowDialog();
+            formProfil.Show();
+            this.Hide();
         }
     }
 }
