@@ -29,57 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfilPetani));
-            tb_namalengkap = new TextBox();
-            tb_alamat = new TextBox();
-            tb_notlp = new TextBox();
-            tb_username = new TextBox();
-            tb_password = new TextBox();
             btn_p_register = new Button();
             btn_edit = new Button();
             btn_simpan = new Button();
             btn_batal = new Button();
             btn_keluar = new Button();
+            tb_nama_lengkap = new TextBox();
+            tb_alamat = new TextBox();
+            tb_notlp = new TextBox();
+            tb_username = new TextBox();
+            tb_password = new TextBox();
             SuspendLayout();
-            // 
-            // tb_namalengkap
-            // 
-            tb_namalengkap.Location = new Point(144, 246);
-            tb_namalengkap.Multiline = true;
-            tb_namalengkap.Name = "tb_namalengkap";
-            tb_namalengkap.Size = new Size(181, 20);
-            tb_namalengkap.TabIndex = 0;
-            // 
-            // tb_alamat
-            // 
-            tb_alamat.Location = new Point(145, 299);
-            tb_alamat.Multiline = true;
-            tb_alamat.Name = "tb_alamat";
-            tb_alamat.Size = new Size(181, 20);
-            tb_alamat.TabIndex = 1;
-            // 
-            // tb_notlp
-            // 
-            tb_notlp.Location = new Point(145, 351);
-            tb_notlp.Multiline = true;
-            tb_notlp.Name = "tb_notlp";
-            tb_notlp.Size = new Size(181, 20);
-            tb_notlp.TabIndex = 2;
-            // 
-            // tb_username
-            // 
-            tb_username.Location = new Point(433, 251);
-            tb_username.Multiline = true;
-            tb_username.Name = "tb_username";
-            tb_username.Size = new Size(181, 20);
-            tb_username.TabIndex = 3;
-            // 
-            // tb_password
-            // 
-            tb_password.Location = new Point(431, 303);
-            tb_password.Multiline = true;
-            tb_password.Name = "tb_password";
-            tb_password.Size = new Size(181, 20);
-            tb_password.TabIndex = 4;
             // 
             // btn_p_register
             // 
@@ -89,10 +49,10 @@
             btn_p_register.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_p_register.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_p_register.FlatStyle = FlatStyle.Flat;
-            btn_p_register.Location = new Point(711, 187);
+            btn_p_register.Location = new Point(889, 234);
             btn_p_register.Margin = new Padding(2);
             btn_p_register.Name = "btn_p_register";
-            btn_p_register.Size = new Size(98, 31);
+            btn_p_register.Size = new Size(122, 39);
             btn_p_register.TabIndex = 5;
             btn_p_register.UseVisualStyleBackColor = false;
             // 
@@ -104,10 +64,10 @@
             btn_edit.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_edit.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_edit.FlatStyle = FlatStyle.Flat;
-            btn_edit.Location = new Point(712, 188);
+            btn_edit.Location = new Point(887, 237);
             btn_edit.Margin = new Padding(2);
             btn_edit.Name = "btn_edit";
-            btn_edit.Size = new Size(98, 31);
+            btn_edit.Size = new Size(128, 30);
             btn_edit.TabIndex = 5;
             btn_edit.UseVisualStyleBackColor = false;
             btn_edit.Click += btnEdit_Click;
@@ -120,10 +80,10 @@
             btn_simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_simpan.FlatStyle = FlatStyle.Flat;
-            btn_simpan.Location = new Point(710, 222);
+            btn_simpan.Location = new Point(887, 283);
             btn_simpan.Margin = new Padding(2);
             btn_simpan.Name = "btn_simpan";
-            btn_simpan.Size = new Size(98, 31);
+            btn_simpan.Size = new Size(128, 30);
             btn_simpan.TabIndex = 6;
             btn_simpan.UseVisualStyleBackColor = false;
             btn_simpan.Click += btnSimpan_Click;
@@ -136,10 +96,10 @@
             btn_batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_batal.FlatStyle = FlatStyle.Flat;
-            btn_batal.Location = new Point(711, 259);
+            btn_batal.Location = new Point(886, 328);
             btn_batal.Margin = new Padding(2);
             btn_batal.Name = "btn_batal";
-            btn_batal.Size = new Size(98, 31);
+            btn_batal.Size = new Size(128, 30);
             btn_batal.TabIndex = 7;
             btn_batal.UseVisualStyleBackColor = false;
             btn_batal.Click += btnBatal_Click;
@@ -152,31 +112,82 @@
             btn_keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_keluar.FlatStyle = FlatStyle.Flat;
-            btn_keluar.Location = new Point(711, 296);
+            btn_keluar.Location = new Point(886, 374);
             btn_keluar.Margin = new Padding(2);
             btn_keluar.Name = "btn_keluar";
-            btn_keluar.Size = new Size(98, 31);
+            btn_keluar.Size = new Size(128, 30);
             btn_keluar.TabIndex = 8;
             btn_keluar.UseVisualStyleBackColor = false;
             btn_keluar.Click += btnKeluar_Click;
             // 
+            // tb_nama_lengkap
+            // 
+            tb_nama_lengkap.BorderStyle = BorderStyle.None;
+            tb_nama_lengkap.Location = new Point(176, 308);
+            tb_nama_lengkap.Margin = new Padding(4);
+            tb_nama_lengkap.Multiline = true;
+            tb_nama_lengkap.Name = "tb_nama_lengkap";
+            tb_nama_lengkap.Size = new Size(233, 23);
+            tb_nama_lengkap.TabIndex = 9;
+            // 
+            // tb_alamat
+            // 
+            tb_alamat.BorderStyle = BorderStyle.None;
+            tb_alamat.Location = new Point(176, 374);
+            tb_alamat.Margin = new Padding(4);
+            tb_alamat.Multiline = true;
+            tb_alamat.Name = "tb_alamat";
+            tb_alamat.Size = new Size(233, 23);
+            tb_alamat.TabIndex = 10;
+            // 
+            // tb_notlp
+            // 
+            tb_notlp.BorderStyle = BorderStyle.None;
+            tb_notlp.Location = new Point(176, 440);
+            tb_notlp.Margin = new Padding(4);
+            tb_notlp.Multiline = true;
+            tb_notlp.Name = "tb_notlp";
+            tb_notlp.Size = new Size(233, 23);
+            tb_notlp.TabIndex = 11;
+            // 
+            // tb_username
+            // 
+            tb_username.BorderStyle = BorderStyle.None;
+            tb_username.Location = new Point(539, 314);
+            tb_username.Margin = new Padding(4);
+            tb_username.Multiline = true;
+            tb_username.Name = "tb_username";
+            tb_username.Size = new Size(233, 23);
+            tb_username.TabIndex = 12;
+            // 
+            // tb_password
+            // 
+            tb_password.BorderStyle = BorderStyle.None;
+            tb_password.Location = new Point(539, 381);
+            tb_password.Margin = new Padding(4);
+            tb_password.Multiline = true;
+            tb_password.Name = "tb_password";
+            tb_password.Size = new Size(233, 23);
+            tb_password.TabIndex = 13;
+            // 
             // FormProfilPetani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(942, 495);
+            ClientSize = new Size(1178, 619);
+            Controls.Add(tb_password);
+            Controls.Add(tb_username);
+            Controls.Add(tb_notlp);
+            Controls.Add(tb_alamat);
+            Controls.Add(tb_nama_lengkap);
             Controls.Add(btn_keluar);
             Controls.Add(btn_batal);
             Controls.Add(btn_simpan);
             Controls.Add(btn_edit);
             Controls.Add(btn_p_register);
-            Controls.Add(tb_password);
-            Controls.Add(tb_username);
-            Controls.Add(tb_notlp);
-            Controls.Add(tb_alamat);
-            Controls.Add(tb_namalengkap);
+            Margin = new Padding(4);
             Name = "FormProfilPetani";
             Text = "FormProfilPetani";
             ResumeLayout(false);
@@ -184,16 +195,15 @@
         }
 
         #endregion
-
-        private TextBox tb_namalengkap;
-        private TextBox tb_alamat;
-        private TextBox tb_notlp;
-        private TextBox tb_username;
-        private TextBox tb_password;
         private Button btn_p_register;
         private Button btn_edit;
         private Button btn_simpan;
         private Button btn_batal;
         private Button btn_keluar;
+        private TextBox tb_nama_lengkap;
+        private TextBox tb_alamat;
+        private TextBox tb_notlp;
+        private TextBox tb_username;
+        private TextBox tb_password;
     }
 }

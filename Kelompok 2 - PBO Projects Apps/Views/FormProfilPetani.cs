@@ -20,7 +20,7 @@ namespace Kelompok_2___PBO_Projects_Apps
         private void FormProfilPetani_Load(object sender, EventArgs e)
         {
             LoadDataPetani();
-            tb_namalengkap.ReadOnly = true;
+            tb_nama_lengkap.ReadOnly = true;
             tb_alamat.ReadOnly = true;
             tb_notlp.ReadOnly = true;
             tb_username.ReadOnly = true;
@@ -32,11 +32,11 @@ namespace Kelompok_2___PBO_Projects_Apps
             btn_batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
-        
+
 
         private void LoadDataPetani()
         {
-            tb_namalengkap.Text = petaniLogin.Nama;
+            tb_nama_lengkap.Text = petaniLogin.Nama;
             tb_alamat.Text = petaniLogin.Alamat;
             tb_notlp.Text = petaniLogin.NoTlp;
             tb_username.Text = petaniLogin.Username;
@@ -76,7 +76,7 @@ namespace Kelompok_2___PBO_Projects_Apps
             tb_notlp.ReadOnly = true;
             tb_username.ReadOnly = true;
             tb_password.ReadOnly = true;
-            btn_simpan .Enabled = false;
+            btn_simpan.Enabled = false;
         }
 
         private void btnKeluar_Click(object sender, EventArgs e)

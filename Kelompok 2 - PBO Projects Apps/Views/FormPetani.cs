@@ -32,7 +32,8 @@ namespace Kelompok_2___PBO_Projects_Apps
             );
 
             FormProfilPetani formProfil = new FormProfilPetani(petani);
-            formProfil.ShowDialog();
+            formProfil.Show();
+            this.Hide();
         }
         private void btn_riwayat_Click(object sender, EventArgs e)
         {

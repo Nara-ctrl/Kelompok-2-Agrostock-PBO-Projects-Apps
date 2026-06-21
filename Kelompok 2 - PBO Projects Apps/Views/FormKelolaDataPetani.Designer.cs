@@ -180,7 +180,7 @@
             // tb_username
             // 
             tb_username.BorderStyle = BorderStyle.None;
-            tb_username.Location = new Point(540, 313);
+            tb_username.Location = new Point(540, 314);
             tb_username.Margin = new Padding(4);
             tb_username.Multiline = true;
             tb_username.Name = "tb_username";
