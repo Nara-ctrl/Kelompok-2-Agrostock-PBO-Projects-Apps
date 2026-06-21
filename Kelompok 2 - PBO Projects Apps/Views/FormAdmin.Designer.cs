@@ -45,10 +45,10 @@
             btn_olah_komoditas.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_olah_komoditas.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_olah_komoditas.FlatStyle = FlatStyle.Flat;
-            btn_olah_komoditas.Location = new Point(412, 155);
+            btn_olah_komoditas.Location = new Point(621, 235);
             btn_olah_komoditas.Margin = new Padding(2);
             btn_olah_komoditas.Name = "btn_olah_komoditas";
-            btn_olah_komoditas.Size = new Size(99, 82);
+            btn_olah_komoditas.Size = new Size(147, 126);
             btn_olah_komoditas.TabIndex = 1;
             btn_olah_komoditas.UseVisualStyleBackColor = false;
             btn_olah_komoditas.Click += btn_olah_komoditas_Click;
@@ -61,10 +61,10 @@
             btn_logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_logout.FlatStyle = FlatStyle.Flat;
-            btn_logout.Location = new Point(412, 254);
+            btn_logout.Location = new Point(621, 388);
             btn_logout.Margin = new Padding(2);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(99, 82);
+            btn_logout.Size = new Size(147, 126);
             btn_logout.TabIndex = 2;
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
@@ -77,9 +77,10 @@
             btn_kelola_data.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_kelola_data.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_kelola_data.FlatStyle = FlatStyle.Flat;
-            btn_kelola_data.Location = new Point(552, 155);
+            btn_kelola_data.Location = new Point(832, 235);
+            btn_kelola_data.Margin = new Padding(4, 4, 4, 4);
             btn_kelola_data.Name = "btn_kelola_data";
-            btn_kelola_data.Size = new Size(99, 82);
+            btn_kelola_data.Size = new Size(147, 126);
             btn_kelola_data.TabIndex = 3;
             btn_kelola_data.UseVisualStyleBackColor = false;
             btn_kelola_data.Click += btn_kelola_data_Click;
@@ -92,10 +93,10 @@
             btn_p_register.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_p_register.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_p_register.FlatStyle = FlatStyle.Flat;
-            btn_p_register.Location = new Point(131, 155);
+            btn_p_register.Location = new Point(198, 235);
             btn_p_register.Margin = new Padding(2);
             btn_p_register.Name = "btn_p_register";
-            btn_p_register.Size = new Size(99, 82);
+            btn_p_register.Size = new Size(147, 126);
             btn_p_register.TabIndex = 0;
             btn_p_register.UseVisualStyleBackColor = false;
             btn_p_register.Click += btn_register_Click;
@@ -108,10 +109,10 @@
             btn_RiwayatTransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_RiwayatTransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_RiwayatTransaksi.FlatStyle = FlatStyle.Flat;
-            btn_RiwayatTransaksi.Location = new Point(131, 254);
+            btn_RiwayatTransaksi.Location = new Point(198, 388);
             btn_RiwayatTransaksi.Margin = new Padding(2);
             btn_RiwayatTransaksi.Name = "btn_RiwayatTransaksi";
-            btn_RiwayatTransaksi.Size = new Size(99, 82);
+            btn_RiwayatTransaksi.Size = new Size(147, 126);
             btn_RiwayatTransaksi.TabIndex = 4;
             btn_RiwayatTransaksi.UseVisualStyleBackColor = false;
             btn_RiwayatTransaksi.Click += btn_RiwayatTransaksi_Click;
@@ -124,10 +125,10 @@
             btn_kelola_petani.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_kelola_petani.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_kelola_petani.FlatStyle = FlatStyle.Flat;
-            btn_kelola_petani.Location = new Point(272, 155);
+            btn_kelola_petani.Location = new Point(410, 235);
             btn_kelola_petani.Margin = new Padding(2);
             btn_kelola_petani.Name = "btn_kelola_petani";
-            btn_kelola_petani.Size = new Size(99, 82);
+            btn_kelola_petani.Size = new Size(147, 126);
             btn_kelola_petani.TabIndex = 5;
             btn_kelola_petani.UseVisualStyleBackColor = false;
             btn_kelola_petani.Click += btn_kelola_petani_Click;
@@ -140,21 +141,21 @@
             btn_KelolaProfil.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn_KelolaProfil.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_KelolaProfil.FlatStyle = FlatStyle.Flat;
-            btn_KelolaProfil.Location = new Point(272, 254);
+            btn_KelolaProfil.Location = new Point(410, 388);
             btn_KelolaProfil.Margin = new Padding(2);
             btn_KelolaProfil.Name = "btn_KelolaProfil";
-            btn_KelolaProfil.Size = new Size(99, 82);
+            btn_KelolaProfil.Size = new Size(147, 126);
             btn_KelolaProfil.TabIndex = 6;
             btn_KelolaProfil.UseVisualStyleBackColor = false;
             btn_KelolaProfil.Click += btn_KelolaProfil_Click;
             // 
             // FormAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_admin;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(782, 405);
+            ClientSize = new Size(1178, 619);
             ControlBox = false;
             Controls.Add(btn_KelolaProfil);
             Controls.Add(btn_kelola_petani);
