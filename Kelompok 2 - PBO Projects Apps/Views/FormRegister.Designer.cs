@@ -29,26 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
-            tb_r_username = new TextBox();
             tb_r_password = new TextBox();
             label1 = new Label();
             imageList1 = new ImageList(components);
             btn_register = new Button();
+            tb_r_nama = new TextBox();
             tb_r_alamat = new TextBox();
             tb_r_notlp = new TextBox();
-            tb_r_nama = new TextBox();
+            tb_r_username = new TextBox();
             SuspendLayout();
-            // 
-            // tb_r_username
-            // 
-            tb_r_username.BorderStyle = BorderStyle.None;
-            tb_r_username.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_username.Location = new Point(559, 249);
-            tb_r_username.Margin = new Padding(2);
-            tb_r_username.Name = "tb_r_username";
-            tb_r_username.Size = new Size(225, 22);
-            tb_r_username.TabIndex = 0;
             // 
             // tb_r_password
             // 
@@ -93,50 +82,64 @@
             btn_register.UseVisualStyleBackColor = false;
             btn_register.Click += btn_register_Click;
             // 
+            // tb_r_nama
+            // 
+            tb_r_nama.BorderStyle = BorderStyle.None;
+            tb_r_nama.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_r_nama.Location = new Point(147, 252);
+            tb_r_nama.Margin = new Padding(2);
+            tb_r_nama.Multiline = true;
+            tb_r_nama.Name = "tb_r_nama";
+            tb_r_nama.Size = new Size(194, 19);
+            tb_r_nama.TabIndex = 8;
+            // 
             // tb_r_alamat
             // 
             tb_r_alamat.BorderStyle = BorderStyle.None;
             tb_r_alamat.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_alamat.Location = new Point(193, 305);
+            tb_r_alamat.Location = new Point(147, 306);
             tb_r_alamat.Margin = new Padding(2);
+            tb_r_alamat.Multiline = true;
             tb_r_alamat.Name = "tb_r_alamat";
-            tb_r_alamat.Size = new Size(225, 22);
-            tb_r_alamat.TabIndex = 6;
+            tb_r_alamat.Size = new Size(194, 19);
+            tb_r_alamat.TabIndex = 9;
             // 
             // tb_r_notlp
             // 
             tb_r_notlp.BorderStyle = BorderStyle.None;
             tb_r_notlp.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_notlp.Location = new Point(193, 368);
+            tb_r_notlp.Location = new Point(147, 360);
             tb_r_notlp.Margin = new Padding(2);
+            tb_r_notlp.Multiline = true;
             tb_r_notlp.Name = "tb_r_notlp";
-            tb_r_notlp.Size = new Size(225, 22);
-            tb_r_notlp.TabIndex = 7;
+            tb_r_notlp.Size = new Size(194, 19);
+            tb_r_notlp.TabIndex = 10;
             // 
-            // tb_r_nama
+            // tb_r_username
             // 
-            tb_r_nama.BorderStyle = BorderStyle.None;
-            tb_r_nama.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_r_nama.Location = new Point(193, 243);
-            tb_r_nama.Margin = new Padding(2);
-            tb_r_nama.Name = "tb_r_nama";
-            tb_r_nama.Size = new Size(225, 22);
-            tb_r_nama.TabIndex = 8;
+            tb_r_username.BorderStyle = BorderStyle.None;
+            tb_r_username.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_r_username.Location = new Point(392, 244);
+            tb_r_username.Margin = new Padding(2);
+            tb_r_username.Multiline = true;
+            tb_r_username.Name = "tb_r_username";
+            tb_r_username.Size = new Size(194, 19);
+            tb_r_username.TabIndex = 11;
             // 
             // FormRegister
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg_register_petani__admin_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
-            Controls.Add(tb_r_nama);
+            Controls.Add(tb_r_username);
             Controls.Add(tb_r_notlp);
             Controls.Add(tb_r_alamat);
+            Controls.Add(tb_r_nama);
             Controls.Add(btn_register);
             Controls.Add(label1);
             Controls.Add(tb_r_password);
-            Controls.Add(tb_r_username);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "FormRegister";
@@ -148,14 +151,13 @@
         }
 
         #endregion
-
-        private TextBox tb_r_username;
         private TextBox tb_r_password;
         private Label label1;
         private ImageList imageList1;
         private Button btn_register;
+        private TextBox tb_r_nama;
         private TextBox tb_r_alamat;
         private TextBox tb_r_notlp;
-        private TextBox tb_r_nama;
+        private TextBox tb_r_username;
     }
 }

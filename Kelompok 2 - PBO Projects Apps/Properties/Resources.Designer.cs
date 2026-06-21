@@ -63,9 +63,59 @@ namespace Kelompok_2___PBO_Projects_Apps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2026_06_14_at_22_58_38 {
+        internal static System.Drawing.Bitmap bg_admin {
             get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2026-06-14 at 22.58.38", resourceCulture);
+                object obj = ResourceManager.GetObject("bg_admin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_catat_transaksi__admin_ {
+            get {
+                object obj = ResourceManager.GetObject("bg_catat_transaksi_(admin)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_kelola_data__admin_ {
+            get {
+                object obj = ResourceManager.GetObject("bg_kelola_data_(admin)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_lihat_stok__admin_ {
+            get {
+                object obj = ResourceManager.GetObject("bg_lihat_stok_(admin)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_login {
+            get {
+                object obj = ResourceManager.GetObject("bg_login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_register_petani__admin_ {
+            get {
+                object obj = ResourceManager.GetObject("bg_register_petani_(admin)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

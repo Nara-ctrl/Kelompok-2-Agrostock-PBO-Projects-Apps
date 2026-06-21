@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaksi));
             btn_masuk = new Button();
             btn_keluar = new Button();
             cb_komoditas = new ComboBox();
@@ -246,7 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg_catat_transaksi__admin_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(978, 506);
             ControlBox = false;
