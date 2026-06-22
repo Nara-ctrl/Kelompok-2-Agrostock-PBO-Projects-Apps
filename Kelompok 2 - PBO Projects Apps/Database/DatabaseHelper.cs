@@ -21,11 +21,13 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             List<Komoditas> list = new List<Komoditas>();
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
+
             using var cmd = new NpgsqlCommand(
-    "SELECT id_komoditas, nama_komoditas, satuan " +
-    "FROM komoditas " +
-    "WHERE status = true " +
-    "ORDER BY id_komoditas ASC", conn);
+                "SELECT id_komoditas, nama_komoditas, satuan " +
+                "FROM komoditas " +
+                "WHERE status = true " +
+                "ORDER BY id_komoditas ASC", conn);
+
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -42,6 +44,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
         {
             using var conn = new NpgsqlConnection(connString);
             conn.Open();
+
             using var cmd = new NpgsqlCommand(
                 "SELECT id_komoditas " +
                 "FROM komoditas " +
