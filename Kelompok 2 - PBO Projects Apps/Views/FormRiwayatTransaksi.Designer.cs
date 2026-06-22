@@ -104,7 +104,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormRiwayatTransaksi";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Riwayat Transaksi (Admin)";
+            Text = "Riwayat Transaksi";
             Load += FormRiwayatTransaksi_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_R_Transaksi).EndInit();
