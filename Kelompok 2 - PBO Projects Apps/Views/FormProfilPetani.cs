@@ -81,7 +81,9 @@ namespace Kelompok_2___PBO_Projects_Apps
 
         private void btnKeluar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormPetani back = new FormPetani(petaniLogin.IdPetani);
+            back.Show();
+            this.Hide();
         }
     }
 }
