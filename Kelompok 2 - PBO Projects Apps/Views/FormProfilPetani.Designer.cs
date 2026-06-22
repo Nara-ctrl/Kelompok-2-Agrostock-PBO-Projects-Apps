@@ -177,6 +177,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1178, 619);
+            ControlBox = false;
             Controls.Add(tb_password);
             Controls.Add(tb_username);
             Controls.Add(tb_notlp);
@@ -189,7 +190,7 @@
             Controls.Add(btn_p_register);
             Margin = new Padding(4);
             Name = "FormProfilPetani";
-            Text = "FormProfilPetani";
+            Text = "Kelola Profil (Petani)";
             ResumeLayout(false);
             PerformLayout();
         }

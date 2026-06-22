@@ -10,4 +10,11 @@
         nama_komoditas = nama;
         this.satuan = satuan;
     }
+
+    public Komoditas(string id, string nama,  decimal jumlah, string satuan)
+    {
+        id_komoditas = id;
+        nama_komoditas = nama;
+        this.satuan = satuan;
+    }
 }

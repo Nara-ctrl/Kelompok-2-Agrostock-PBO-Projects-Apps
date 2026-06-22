@@ -15,7 +15,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
             "Username=postgres;" +
             "Password=zen123";
 
-
         public List<Komoditas> GetAllKomoditas()
         {
             List<Komoditas> list = new List<Komoditas>();
@@ -37,7 +36,29 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                     reader.GetString(2)
                 ));
             }
-            return list; 
+            return list;
+        }
+        public List<Komoditas> GetKomoditasStokMasuk()
+        {
+            List<Komoditas> list = new List<Komoditas>();
+            using var conn = new NpgsqlConnection(connString);
+            conn.Open();
+            using var cmd = new NpgsqlCommand(
+                "SELECT k.id_komoditas, k.nama_komoditas, k.satuan " +
+                "FROM komoditas k " +
+                "JOIN stok s ON k.id_komoditas = s.id_komoditas " +
+                "WHERE k.status = true AND s.jumlah > 0 " +
+                "ORDER BY k.id_komoditas ASC", conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new Komoditas(
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2)
+                ));
+            }
+            return list;
         }
 
         public string GenerateIdKomoditas()
@@ -247,6 +268,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                 "SELECT COALESCE(SUM(jumlah), 0) FROM stok WHERE id_komoditas = @id", conn);
             cmd.Parameters.AddWithValue("id", idKomoditas);
             var hasil = cmd.ExecuteScalar();
+
             return hasil == null ? 0 : Convert.ToDecimal(hasil);
         }
 
@@ -383,29 +405,6 @@ namespace Kelompok_2___PBO_Projects_Apps.Database
                     reader.GetString(1),
                     reader.GetString(2),
                     reader.GetDecimal(3)
-                ));
-            }
-            return list;
-        }
-
-        public List<Komoditas> GetKomoditasStokMasuk()
-        {
-            List<Komoditas> list = new List<Komoditas>();
-            using var conn = new NpgsqlConnection(connString);
-            conn.Open();
-            using var cmd = new NpgsqlCommand(
-                "SELECT DISTINCT k.id_komoditas, k.nama_komoditas, k.satuan " +
-                "FROM komoditas k " +
-                "JOIN transaksi t ON k.id_komoditas = t.id_komoditas " +
-                "WHERE k.status = true AND t.jenis = 'masuk' " +
-                "ORDER BY k.id_komoditas ASC", conn);
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(new Komoditas(
-                    reader.GetString(0),
-                    reader.GetString(1),
-                    reader.GetString(2)
                 ));
             }
             return list;

@@ -161,6 +161,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1178, 619);
+            ControlBox = false;
             Controls.Add(btn_keluar);
             Controls.Add(btn_batal);
             Controls.Add(btn_simpan);
@@ -173,7 +174,7 @@
             Margin = new Padding(4);
             Name = "FormKelolaProfilAdmin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormKelolaProfilAdmin";
+            Text = "Kelola Profil (Admin)";
             ResumeLayout(false);
             PerformLayout();
         }

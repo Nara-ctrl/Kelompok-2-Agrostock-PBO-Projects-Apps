@@ -23,13 +23,12 @@ namespace Kelompok_2___PBO_Projects_Apps
             dgv_komoditas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_komoditas.MultiSelect = false;
             dgv_komoditas.ReadOnly = false;
-            //kolom edi
+
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "id", HeaderText = "ID Komoditas", DataPropertyName = "id_komoditas" });
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "nama", HeaderText = "Nama Komoditas", DataPropertyName = "nama_komoditas" });
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "jumlah", HeaderText = "Jumlah", DataPropertyName = "jumlah" });
             dgv_komoditas.Columns.Add(new DataGridViewTextBoxColumn { Name = "satuan", HeaderText = "Satuan", DataPropertyName = "satuan" });
 
-            // Kolom Edit
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.Name = "Edit";
             btnEdit.HeaderText = "";
@@ -41,7 +40,6 @@ namespace Kelompok_2___PBO_Projects_Apps
             btnEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgv_komoditas.Columns.Add(btnEdit);
 
-            // Kolom Hapus
             DataGridViewButtonColumn btnHapus = new DataGridViewButtonColumn();
             btnHapus.Name = "Hapus";
             btnHapus.HeaderText = "";

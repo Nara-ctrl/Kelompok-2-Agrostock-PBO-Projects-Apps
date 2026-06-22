@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace Kelompok_2___PBO_Projects_Apps.Views
 {
-    public partial class FormKelolaDataPetani : Form
+    public partial class FormEditDataPetani : Form
     {
         private int _idUser;
         private DatabaseHelper db = new DatabaseHelper();
 
-        public FormKelolaDataPetani(int idUser)
+        public FormEditDataPetani(int idUser)
         {
             InitializeComponent();
             _idUser = idUser;

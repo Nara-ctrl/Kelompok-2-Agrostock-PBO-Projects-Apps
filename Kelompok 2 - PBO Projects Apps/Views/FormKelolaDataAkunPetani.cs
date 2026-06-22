@@ -81,7 +81,7 @@ namespace Kelompok_2___PBO_Projects_Apps.Views
 
             if (e.ColumnIndex == dgv_petani.Columns["Edit"].Index)
             {
-                FormKelolaDataPetani formEdit = new FormKelolaDataPetani(idUser);
+                FormEditDataPetani formEdit = new FormEditDataPetani(idUser);
                 formEdit.Show();
                 LoadData();
                 this.Hide();

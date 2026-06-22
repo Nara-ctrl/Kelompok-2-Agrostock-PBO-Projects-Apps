@@ -1,6 +1,6 @@
 ﻿namespace Kelompok_2___PBO_Projects_Apps.Views
 {
-    partial class FormKelolaDataPetani
+    partial class FormEditDataPetani
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKelolaDataPetani));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditDataPetani));
             tb_nama_lengkap = new TextBox();
             tb_alamat = new TextBox();
             tb_noTlp = new TextBox();
@@ -187,7 +187,7 @@
             tb_username.Size = new Size(232, 23);
             tb_username.TabIndex = 12;
             // 
-            // FormKelolaDataPetani
+            // FormEditDataPetani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -206,9 +206,9 @@
             Controls.Add(tb_alamat);
             Controls.Add(tb_nama_lengkap);
             Margin = new Padding(4);
-            Name = "FormKelolaDataPetani";
+            Name = "FormEditDataPetani";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormKelolaDataPetani";
+            Text = "Edit Data Petani (Admin)";
             ResumeLayout(false);
             PerformLayout();
         }

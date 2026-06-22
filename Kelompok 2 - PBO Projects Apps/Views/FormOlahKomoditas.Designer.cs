@@ -39,12 +39,11 @@
             // 
             dgv_komoditas.AllowUserToAddRows = false;
             dgv_komoditas.BackgroundColor = SystemColors.Window;
-            dgv_komoditas.BorderStyle = BorderStyle.None;
             dgv_komoditas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgv_komoditas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_komoditas.GridColor = Color.LightGray;
             dgv_komoditas.Location = new Point(165, 226);
-            dgv_komoditas.Margin = new Padding(4, 4, 4, 4);
+            dgv_komoditas.Margin = new Padding(4);
             dgv_komoditas.Name = "dgv_komoditas";
             dgv_komoditas.ReadOnly = true;
             dgv_komoditas.RowHeadersWidth = 51;
@@ -66,9 +65,11 @@
             btn_tambah.BackColor = Color.Transparent;
             btn_tambah.BackgroundImageLayout = ImageLayout.None;
             btn_tambah.FlatAppearance.BorderSize = 0;
+            btn_tambah.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_tambah.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_tambah.FlatStyle = FlatStyle.Flat;
             btn_tambah.Location = new Point(839, 205);
-            btn_tambah.Margin = new Padding(4, 4, 4, 4);
+            btn_tambah.Margin = new Padding(4);
             btn_tambah.Name = "btn_tambah";
             btn_tambah.Size = new Size(128, 30);
             btn_tambah.TabIndex = 7;
@@ -79,9 +80,11 @@
             // 
             btn_keluar.BackColor = Color.Transparent;
             btn_keluar.FlatAppearance.BorderSize = 0;
+            btn_keluar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_keluar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn_keluar.FlatStyle = FlatStyle.Flat;
             btn_keluar.Location = new Point(839, 254);
-            btn_keluar.Margin = new Padding(4, 4, 4, 4);
+            btn_keluar.Margin = new Padding(4);
             btn_keluar.Name = "btn_keluar";
             btn_keluar.Size = new Size(128, 30);
             btn_keluar.TabIndex = 8;
@@ -101,7 +104,7 @@
             Controls.Add(TbSatuan);
             Controls.Add(dgv_komoditas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormOlahKomoditas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kelola Komoditas (Admin)";

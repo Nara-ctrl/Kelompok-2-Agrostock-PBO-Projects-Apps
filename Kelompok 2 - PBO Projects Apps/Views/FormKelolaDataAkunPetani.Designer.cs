@@ -69,12 +69,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1178, 619);
+            ControlBox = false;
             Controls.Add(btn_keluar);
             Controls.Add(dgv_petani);
             Margin = new Padding(4);
             Name = "FormKelolaDataAkunPetani";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormKelolaDataAkunPetani";
+            Text = "Kelola Data Petani (admin)";
             Load += FormKelolaDataAkunPetani_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_petani).EndInit();
             ResumeLayout(false);
